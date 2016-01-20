@@ -15,9 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.UserCenterActivity" />
-        <activity android:name=".Activity.FavorableShopsActivity" />
-        <activity android:name=".Activity.ScanActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.ShopDetailActivity" />
+        <activity android:name=".Activity.MyDocumentActivity" />
+        <activity android:name=".Activity.DocumentDetailActivity" />
+        <activity android:name=".Activity.UserInfoComplementActivity" />
+        <activity android:name=".Activity.RechargeOnlineActivity" />
+        <activity android:name=".Activity.FileUploadActivity" />
+        <activity android:name=".Activity.MircroLibraryActivity" />
+        <activity android:name=".Activity.RecommendActivity"></activity>
     </application>
 
 </manifest>
