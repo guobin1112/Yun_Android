@@ -1,16 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <FrameLayout
+        android:id="@+id/fl_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <fragment
+            android:name="com.yuncool.yun_android.Fragment.MainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_main" />
+
+    </FrameLayout>
+
+    <View style="@style/LineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rg_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_main"
+                style="@style/NavRadioButtonStyle"
+                android:drawableTop="@drawable/selector_rbtn_main"
+                android:text="首页" />
+
+            <RadioButton
+                android:id="@+id/rb_scan"
+                style="@style/NavRadioButtonStyle"
+                android:drawableTop="@drawable/selector_rbtn_scan"
+                android:text="扫一扫" />
+
+            <RadioButton
+                android:id="@+id/rb_shop_cart"
+                style="@style/NavRadioButtonStyle"
+                android:drawableTop="@drawable/selector_rbtn_shop"
+                android:text="惠购商家" />
+
+            <RadioButton
+                android:id="@+id/rb_user_center"
+                style="@style/NavRadioButtonStyle"
+                android:drawableTop="@drawable/selector_rbtn_user_center"
+                android:text="个人中心" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

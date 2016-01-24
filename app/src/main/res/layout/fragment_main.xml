@@ -1,13 +1,65 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.yuncool.yun_android.Fragment.MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <RelativeLayout
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ImageButton
+            android:id="@+id/ib_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:src="@drawable/print" />
+
+        <ImageButton
+            android:id="@+id/ib_micro_lib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ib_print"
+            android:layout_below="@+id/ib_print"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/micro_lib" />
+
+
+        <ImageButton
+            android:id="@+id/ib_shop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/ib_print"
+            android:layout_below="@+id/ib_print"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/shop" />
+
+        <ImageButton
+            android:id="@+id/ib_user_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ib_micro_lib"
+            android:layout_alignRight="@+id/ib_print"
+            android:background="@null"
+            android:src="@drawable/user_center" />
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ib_micro_lib"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/social" />
+
+    </RelativeLayout>
+
+</ScrollView>
