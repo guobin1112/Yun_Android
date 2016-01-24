@@ -8,23 +8,34 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.MainActivity"
+            android:label="首页">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.ShopDetailActivity" />
-        <activity android:name=".Activity.MyDocumentActivity" />
-        <activity android:name=".Activity.DocumentDetailActivity" />
-        <activity android:name=".Activity.UserInfoComplementActivity" />
-        <activity android:name=".Activity.RechargeOnlineActivity" />
-        <activity android:name=".Activity.FileUploadActivity" />
-        <activity android:name=".Activity.MircroLibraryActivity" />
-        <activity android:name=".Activity.RecommendActivity"></activity>
+        <activity android:name=".Activity.LoginActivity"
+            android:label="登录"/>
+        <activity android:name=".Activity.RegisterActivity"
+            android:label="注册"/>
+        <activity android:name=".Activity.ShopDetailActivity"
+            android:label="商铺详情"/>
+        <activity android:name=".Activity.MyDocumentActivity"
+            android:label="我的文档"/>
+        <activity android:name=".Activity.DocumentDetailActivity"
+            android:label="文档详情"/>
+        <activity android:name=".Activity.UserInfoComplementActivity"
+            android:label="完善资料"/>
+        <activity android:name=".Activity.RechargeOnlineActivity"
+            android:label="在线充值"/>
+        <activity android:name=".Activity.FileUploadActivity"
+            android:label="上传文件"/>
+        <activity android:name=".Activity.MircroLibraryActivity"
+            android:label="微信资料库"/>
+        <activity android:name=".Activity.RecommendActivity"
+            android:label="推荐好友"></activity>
     </application>
 
 </manifest>
