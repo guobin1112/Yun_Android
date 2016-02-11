@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/fl_fragment"
@@ -13,7 +13,7 @@
         android:layout_weight="7">
 
         <fragment
-            android:name="com.yuncool.yun_android.Fragment.MainFragment"
+            android:name="com.yuncool.yun_android.fragment.MainFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/fragment_main" />
