@@ -1,13 +1,77 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWindowBackground"
+    android:orientation="vertical"
     tools:context=".fragment.FavorableShopsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/ll_shop_search"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/view_normal_height"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/view_small_space"
+        android:paddingTop="@dimen/view_small_space">
 
-</FrameLayout>
+        <Spinner
+            android:id="@+id/sp_location"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <EditText
+
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_weight="4"
+            android:background="@drawable/shape_search_input_background" />
+
+    </LinearLayout>
+
+    <View style="@style/LineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/view_normal_height"
+            android:layout_below="@+id/ll_shop_search"
+            android:drawableLeft="@drawable/discount"
+            android:drawablePadding="@dimen/view_normal_space"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/view_large_space"
+            android:text="@string/shop_discount_left"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/font_normal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/font_normal" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/rv_shops"
+        android:background="@color/colorWindowBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_small_space"
+        android:layout_marginRight="@dimen/view_small_space"
+        android:layout_marginTop="@dimen/view_small_space" />
+
+
+</LinearLayout>
