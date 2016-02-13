@@ -10,4 +10,5 @@
         <item>北京</item>
     </string-array>
     <string name="shop_discount_left">剩余消费券：</string>
+    <string name="shop_search_hint">请输入商户名、分类、地点</string>
 </resources>

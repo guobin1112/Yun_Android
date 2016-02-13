@@ -23,13 +23,21 @@
             android:layout_weight="1" />
 
         <EditText
-
             android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/view_normal_space"
             android:layout_weight="4"
-            android:background="@drawable/shape_search_input_background" />
+            android:background="@drawable/shape_search_input_background"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="@dimen/view_small_space"
+            android:hint="@string/shop_search_hint"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="@dimen/view_small_space"
+            android:singleLine="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/font_normal" />
 
     </LinearLayout>
 
@@ -64,14 +72,12 @@
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
-
         android:id="@+id/rv_shops"
-        android:background="@color/colorWindowBackground"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/view_small_space"
-        android:layout_marginRight="@dimen/view_small_space"
-        android:layout_marginTop="@dimen/view_small_space" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/view_small_space"
+        android:background="@color/colorWindowBackground" />
 
 
 </LinearLayout>
