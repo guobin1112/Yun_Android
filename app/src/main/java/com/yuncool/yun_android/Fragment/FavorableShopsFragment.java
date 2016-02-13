@@ -39,8 +39,6 @@ public class FavorableShopsFragment extends BaseFragment {
     public FavorableShopsFragment() {
         // Required empty public constructor
 
-
-        //123
     }
 
 

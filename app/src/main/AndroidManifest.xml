@@ -19,34 +19,35 @@
         </activity>
         <activity
             android:name=".Activity.LoginActivity"
-            android:label="登录"/>
+            android:label="登录" />
         <activity
             android:name=".Activity.RegisterActivity"
-            android:label="注册"/>
+            android:label="注册" />
         <activity
             android:name=".Activity.ShopDetailActivity"
-            android:label="商铺详情"/>
+            android:label="商铺详情" />
         <activity
             android:name=".Activity.MyDocumentActivity"
-            android:label="我的文档"/>
+            android:label="我的文档" />
         <activity
             android:name=".Activity.DocumentDetailActivity"
-            android:label="文档详情"/>
+            android:label="文档详情" />
         <activity
             android:name=".Activity.UserInfoComplementActivity"
-            android:label="完善资料"/>
+            android:label="完善资料" />
         <activity
             android:name=".Activity.RechargeOnlineActivity"
-            android:label="在线充值"/>
+            android:label="在线充值" />
         <activity
             android:name=".Activity.FileUploadActivity"
-            android:label="上传文件"/>
+            android:label="上传文件" />
         <activity
             android:name=".Activity.MircroLibraryActivity"
-            android:label="微信资料库"/>
+            android:label="微信资料库" />
         <activity
             android:name=".Activity.RecommendActivity"
-            android:label="推荐好友"></activity>
+            android:label="推荐好友" />
+        <activity android:name=".Activity.PrintActivity"></activity>
     </application>
 
 </manifest>

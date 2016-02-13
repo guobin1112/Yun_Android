@@ -6,10 +6,10 @@
     tools:context="com.yuncool.yun_android.Fragment.MainFragment">
 
     <RelativeLayout
-        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:orientation="vertical">
 
         <ImageButton
@@ -53,6 +53,7 @@
 
 
         <ImageButton
+            android:id="@+id/ib_social"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ib_micro_lib"
