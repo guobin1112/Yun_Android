@@ -1,14 +1,149 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWindowBackground"
-    tools:context="com.yuncool.yun_android.fragment.UserCenterFragment">
+    android:orientation="vertical"
+    tools:context="com.yuncool.yun_android.Fragment.UserCenterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="100dp"
+        android:background="@android:color/white">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_head_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_normal_space"
+            android:src="@drawable/head_pic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/iv_head_pic"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="李晓云"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/font_normal" />
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_user_name"
+                android:layout_below="@+id/tv_user_name"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="sgh123"
+                android:textColor="@color/colorTextHint"
+                android:textSize="@dimen/font_normal" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <View style="@style/LineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_normal_space"
+                android:layout_marginRight="@dimen/view_large_space"
+                android:text="@string/user_center_yun_money" />
+
+            <TextView
+                android:id="@+id/tv_yun_money_number"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="@color/orange" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/LineStyle"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_normal_space"
+                android:layout_marginRight="@dimen/view_large_space"
+                android:text="@string/user_center_discount" />
+
+            <TextView
+                android:id="@+id/tv_discount_number"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="@color/orange" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/LineStyle" />
+
+
+    <View
+        style="@style/LineStyle"
+        android:layout_marginTop="@dimen/view_large_space" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_get_yun_money"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/money"
+            android:text="@string/user_center_get_yun_money" />
+
+        <View style="@style/LineWithMarginLeftStyle" />
+
+        <TextView
+            android:id="@+id/tv_recharge_online"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/recharge"
+            android:text="@string/user_center_get_yun_money" />
+    </LinearLayout>
+
+    <View style="@style/LineStyle" />
+
+
+</LinearLayout>

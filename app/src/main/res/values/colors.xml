@@ -7,7 +7,7 @@
     <color name="colorTextSecondary">#666666</color>
     <color name="colorTextHint">#999999</color>
     <color name="colorWindowBackground">#eeeeee</color>
-    <color name="colorLineDivider">#9E9E9E</color>
+    <color name="colorLineDivider">#dddddd</color>
 
     <color name="orange">#FF9800</color>
 </resources>

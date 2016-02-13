@@ -11,4 +11,9 @@
     </string-array>
     <string name="shop_discount_left">剩余消费券：</string>
     <string name="shop_search_hint">请输入商户名、分类、地点</string>
+
+    <string name="user_center_yun_money">云币余额：</string>
+    <string name="user_center_discount">消费券余额：</string>
+    <string name="user_center_get_yun_money">赚取云币</string>
+    <string name="user_center_recharge_online">在线充值 </string>
 </resources>

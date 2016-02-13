@@ -30,4 +30,28 @@
         <item name="android:background">@color/colorLineDivider</item>
     </style>
 
+    <style name="LineWithMarginLeftStyle" parent="LineStyle">
+        <item name="android:layout_marginLeft">54dp</item>
+    </style>
+
+    <style name="DefaultTextStyle">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="InputWithLeftIconRightArrowStyle" parent="DefaultTextStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/view_normal_height</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:drawablePadding">@dimen/view_normal_space</item>
+        <item name="android:drawableRight">@drawable/arrow_right</item>
+        <item name="android:paddingLeft">@dimen/view_normal_space</item>
+        <item name="android:paddingRight">@dimen/view_normal_space</item>
+        <item name="android:gravity">left|center_vertical</item>
+
+    </style>
+
 </resources>

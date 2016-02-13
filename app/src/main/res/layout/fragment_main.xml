@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWindowBackground"
-    tools:context="com.yuncool.yun_android.fragment.MainFragment">
+    tools:context="com.yuncool.yun_android.Fragment.MainFragment">
 
     <RelativeLayout
         android:layout_marginTop="16dp"

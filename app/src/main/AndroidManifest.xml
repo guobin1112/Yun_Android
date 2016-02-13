@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="首页">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,34 +18,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".Activity.LoginActivity"
             android:label="登录"/>
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".Activity.RegisterActivity"
             android:label="注册"/>
         <activity
-            android:name=".activity.ShopDetailActivity"
+            android:name=".Activity.ShopDetailActivity"
             android:label="商铺详情"/>
         <activity
-            android:name=".activity.MyDocumentActivity"
+            android:name=".Activity.MyDocumentActivity"
             android:label="我的文档"/>
         <activity
-            android:name=".activity.DocumentDetailActivity"
+            android:name=".Activity.DocumentDetailActivity"
             android:label="文档详情"/>
         <activity
-            android:name=".activity.UserInfoComplementActivity"
+            android:name=".Activity.UserInfoComplementActivity"
             android:label="完善资料"/>
         <activity
-            android:name=".activity.RechargeOnlineActivity"
+            android:name=".Activity.RechargeOnlineActivity"
             android:label="在线充值"/>
         <activity
-            android:name=".activity.FileUploadActivity"
+            android:name=".Activity.FileUploadActivity"
             android:label="上传文件"/>
         <activity
-            android:name=".activity.MircroLibraryActivity"
+            android:name=".Activity.MircroLibraryActivity"
             android:label="微信资料库"/>
         <activity
-            android:name=".activity.RecommendActivity"
+            android:name=".Activity.RecommendActivity"
             android:label="推荐好友"></activity>
     </application>
 
