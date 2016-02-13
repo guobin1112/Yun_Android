@@ -17,6 +17,8 @@ public class ScanFragment extends BaseFragment {
 
     public ScanFragment() {
         // Required empty public constructor
+
+
     }
 
 

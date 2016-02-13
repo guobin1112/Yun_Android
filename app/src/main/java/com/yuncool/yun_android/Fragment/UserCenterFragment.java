@@ -55,6 +55,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 
     private void initData() {
 
+
     }
 
     private void initEvent() {

@@ -17,6 +17,8 @@ public class MainFragment extends BaseFragment {
 
     public MainFragment() {
         // Required empty public constructor
+
+
     }
 
 
