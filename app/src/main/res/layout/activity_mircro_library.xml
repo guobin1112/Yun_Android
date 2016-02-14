@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.yuncool.yun_android.Activity.MircroLibraryActivity">
+    android:orientation="vertical"
+    tools:context=".Activity.MicroLibraryActivity">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:orientation="vertical"
+        android:padding="@dimen/view_small_space">
+
+        <EditText
+            android:id="@+id/et_search"
+            style="@style/DefaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_search_input_background"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="@dimen/view_small_space"
+            android:gravity="center_vertical|left"
+            android:hint="@string/micro_lib_search"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="@dimen/view_normal_space"
+            android:singleLine="true"
+            android:text="" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:layout_width="wrap_content"
+            android:drawableLeft="@drawable/lib_money"
+            android:drawableRight="@null"
+            android:paddingRight="0dp"
+            android:text="@string/micro_lib_yun_money" />
+
+        <TextView
+            android:id="@+id/tv_yun_money_number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="10"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/font_normal" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_micro_lib"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_large_space" />
+
+</LinearLayout>

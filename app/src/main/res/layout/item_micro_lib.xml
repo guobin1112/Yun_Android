@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/InputWithLeftIconRightArrowStyle"
+    android:id="@+id/tv_micro_lib_name"
+    android:layout_height="@dimen/view_normal_height"
+    android:drawableLeft="@drawable/lib" />

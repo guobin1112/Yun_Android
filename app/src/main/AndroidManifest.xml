@@ -42,7 +42,7 @@
             android:name=".Activity.FileUploadActivity"
             android:label="上传文件" />
         <activity
-            android:name=".Activity.MircroLibraryActivity"
+            android:name=".Activity.MicroLibraryActivity"
             android:label="微信资料库" />
         <activity
             android:name=".Activity.RecommendActivity"

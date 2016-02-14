@@ -16,4 +16,7 @@
     <string name="user_center_discount">消费券余额：</string>
     <string name="user_center_get_yun_money">赚取云币</string>
     <string name="user_center_recharge_online">在线充值 </string>
+
+    <string name="micro_lib_search">搜索</string>
+    <string name="micro_lib_yun_money">剩余云币：</string>
 </resources>

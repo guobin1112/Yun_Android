@@ -18,20 +18,6 @@ public class GridSpaceItemDecoration extends RecyclerView.ItemDecoration {
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
 
-//        int position = parent.getChildLayoutPosition(view);
-//        int column = position % spanCount;
-//
-//
-//        if (column < spanCount - 1) {
-//            outRect.right = spacingInPixel;
-//        }
-//
-//        if (position < spanCount) {
-//            outRect.top = spacingInPixel;
-//        }
-//
-//        outRect.bottom = spacingInPixel;
-
         int halfSpacingInPixel = spacingInPixel / 2;
         outRect.top = halfSpacingInPixel;
         outRect.right = halfSpacingInPixel;

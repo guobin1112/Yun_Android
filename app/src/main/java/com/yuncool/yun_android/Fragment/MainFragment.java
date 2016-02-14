@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.Activity.MicroLibraryActivity;
 import com.yuncool.yun_android.Activity.PrintActivity;
 import com.yuncool.yun_android.R;
 
@@ -67,17 +68,21 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+
+        Intent intent;
+
         switch (view.getId()) {
 
             case R.id.ib_print:
 
-                Intent intent = new Intent(getActivity(), PrintActivity.class);
+                intent = new Intent(getActivity(), PrintActivity.class);
                 startActivity(intent);
 
                 break;
             case R.id.ib_micro_lib:
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), MicroLibraryActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.ib_shop:
