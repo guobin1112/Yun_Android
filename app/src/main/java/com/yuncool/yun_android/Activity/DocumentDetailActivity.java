@@ -1,11 +1,10 @@
 package com.yuncool.yun_android.Activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.yuncool.yun_android.R;
 
-public class DocumentDetailActivity extends AppCompatActivity {
+public class DocumentDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

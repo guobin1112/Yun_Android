@@ -47,7 +47,9 @@
         <activity
             android:name=".Activity.RecommendActivity"
             android:label="推荐好友" />
-        <activity android:name=".Activity.PrintActivity"></activity>
+        <activity android:name=".Activity.PrintActivity" />
+        <activity android:name=".Activity.SocialActivity" />
+        <activity android:name=".Activity.SignInActivity"></activity>
     </application>
 
 </manifest>

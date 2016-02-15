@@ -140,7 +140,7 @@
             android:id="@+id/tv_recharge_online"
             style="@style/InputWithLeftIconRightArrowStyle"
             android:drawableLeft="@drawable/recharge"
-            android:text="@string/user_center_get_yun_money" />
+            android:text="@string/user_center_recharge_online" />
     </LinearLayout>
 
     <View style="@style/LineStyle" />

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.yuncool.yun_android.Activity.MicroLibraryActivity;
 import com.yuncool.yun_android.Activity.PrintActivity;
+import com.yuncool.yun_android.Activity.SocialActivity;
 import com.yuncool.yun_android.R;
 
 /**
@@ -97,7 +98,8 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.ib_social:
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), SocialActivity.class);
+                startActivity(intent);
 
                 break;
         }

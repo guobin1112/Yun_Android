@@ -1,14 +1,13 @@
 package com.yuncool.yun_android.Activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
 
-public class PrintActivity extends AppCompatActivity implements View.OnClickListener {
+public class PrintActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageButton ib_my_document, ib_scan_or_code, ib_up_load_files;
 

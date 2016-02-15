@@ -19,4 +19,9 @@
 
     <string name="micro_lib_search">搜索</string>
     <string name="micro_lib_yun_money">剩余云币：</string>
+
+    <string name="social_publish">发布</string>
+    <string name="social_name">互动小站</string>
+    <string name="social_post">帖子：</string>
+    <string name="social_talent">达人：</string>
 </resources>

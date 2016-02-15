@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.yuncool.yun_android.R;
 
-public class FileUploadActivity extends AppCompatActivity {
+public class FileUploadActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import com.yuncool.yun_android.view.MarginRightDividerDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MicroLibraryActivity extends AppCompatActivity {
+public class MicroLibraryActivity extends BaseActivity {
 
     private EditText et_search;
     private TextView tv_yun_money_number;
@@ -58,7 +59,13 @@ public class MicroLibraryActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         rv_micro_lib.setLayoutManager(layoutManager);
         rv_micro_lib.setAdapter(adapter);
-        rv_micro_lib.addItemDecoration(new MarginRightDividerDecoration(108));
+
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+
+        int densityDpi = metric.densityDpi;
+
+        rv_micro_lib.addItemDecoration(new MarginRightDividerDecoration((int) (108 * densityDpi / 320)));
 
     }
 
