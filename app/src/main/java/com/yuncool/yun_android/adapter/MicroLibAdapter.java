@@ -18,6 +18,8 @@ public class MicroLibAdapter extends RecyclerView.Adapter<MicroLibAdapter.ViewHo
 
     private List<String> modelList = new ArrayList<>();
 
+    private OnItemClickListener onItemClickListener;
+
     public MicroLibAdapter(List<String> modelList) {
         this.modelList = modelList;
     }
@@ -33,13 +35,29 @@ public class MicroLibAdapter extends RecyclerView.Adapter<MicroLibAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         String name = modelList.get(position);
         if (name != null) {
             holder.tv_micro_lib_name.setText(name);
         }
 
+        if (onItemClickListener != null) {
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.OnItemClick(position);
+                }
+            });
+
+        }
+
+
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -54,5 +72,9 @@ public class MicroLibAdapter extends RecyclerView.Adapter<MicroLibAdapter.ViewHo
         public ViewHolder(View tv_micro_lib_name) {
             super(tv_micro_lib_name);
         }
+    }
+
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
     }
 }

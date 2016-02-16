@@ -1,7 +1,7 @@
 package com.yuncool.yun_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -70,6 +70,14 @@ public class MicroLibraryActivity extends BaseActivity {
     }
 
     private void initEvent() {
+
+        adapter.setOnItemClickListener(new MicroLibAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                Intent intent = new Intent(MicroLibraryActivity.this, MicroLibListActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
