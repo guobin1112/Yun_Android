@@ -24,4 +24,13 @@
     <string name="social_name">互动小站</string>
     <string name="social_post">帖子：</string>
     <string name="social_talent">达人：</string>
+
+    <string name="document_type">文档类型</string>
+    <string name="document_local">本地文档</string>
+    <string name="document_yun_storage">云储存</string>
+    <string name="document_download">已下载</string>
+    <string name="document_print">我要打印</string>
+    <string name="document_other">其他</string>
+    <string name="document_category">浏览目录</string>
+    <string name="document_common_soft">常见软件</string>
 </resources>

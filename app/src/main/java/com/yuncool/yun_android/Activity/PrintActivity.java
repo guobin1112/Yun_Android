@@ -1,5 +1,6 @@
 package com.yuncool.yun_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -43,11 +44,14 @@ public class PrintActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
+
+        Intent intent;
+
         switch (view.getId()) {
             case R.id.ib_my_document:
 
-                //TODO
-                Toast.makeText(PrintActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(PrintActivity.this, MyDocumentActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.ib_scan_or_code:

@@ -3,10 +3,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.yuncool.yun_android.Activity.MyDocumentActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tv_download"
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/view_normal_space"
+            android:paddingRight="@dimen/view_normal_space"
+            android:text="@string/document_download" />
+
+        <TextView
+            android:id="@+id/tv_print"
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/view_normal_space"
+            android:paddingRight="@dimen/view_normal_space"
+            android:text="@string/document_print"
+            android:textColor="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl_bottom"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="@dimen/view_normal_space"
+            android:text="@string/document_type"
+            android:textColor="@color/colorTextSecondary" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <Button
+                android:id="@+id/btn_doc"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/doc"
+                android:text="DOC" />
+
+            <Button
+                android:id="@+id/btn_ppt"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/ppt"
+                android:text="PPT" />
+
+            <Button
+                android:id="@+id/btn_xls"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/xls"
+                android:text="XLS" />
+
+            <Button
+                android:id="@+id/btn_pdf"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:background="@null"
+                android:drawableTop="@drawable/pdf"
+                android:text="PDF" />
+
+            <Button
+                android:id="@+id/btn_txt"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:background="@null"
+                android:drawableTop="@drawable/txt"
+                android:text="TXT" />
+
+            <Button
+                android:id="@+id/btn_other"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:background="@null"
+                android:drawableTop="@drawable/other"
+                android:text="@string/document_other" />
+
+
+        </GridLayout>
+
+        <View
+            style="@style/LineStyle"
+            android:layout_marginTop="@dimen/view_small_space" />
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="@dimen/view_normal_space"
+            android:text="@string/document_local"
+            android:textColor="@color/colorTextSecondary" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <Button
+                android:id="@+id/btn_category"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/category"
+                android:text="@string/document_category" />
+
+            <Button
+                android:id="@+id/btn_common_software"
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/common_soft"
+                android:text="@string/document_common_soft" />
+
+            <Button
+                style="@style/GridViewItemButtonStyle"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:background="@null"
+                android:drawableTop="@drawable/xls"
+                android:text="XLS"
+                android:visibility="invisible" />
+
+        </GridLayout>
+
+        <View
+            style="@style/LineStyle"
+            android:layout_marginTop="@dimen/view_small_space" />
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="@dimen/view_normal_space"
+            android:text="@string/document_yun_storage"
+            android:textColor="@color/colorTextSecondary" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
