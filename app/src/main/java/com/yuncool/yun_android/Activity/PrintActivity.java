@@ -62,8 +62,8 @@ public class PrintActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.ib_up_load_files:
 
-                //TODO
-                Toast.makeText(PrintActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(PrintActivity.this, FileUploadActivity.class);
+                startActivity(intent);
 
                 break;
         }

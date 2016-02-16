@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/view_normal_height"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/view_small_space"
+    android:paddingLeft="@dimen/view_normal_space"
+    android:paddingRight="@dimen/view_normal_space"
+    android:paddingTop="@dimen/view_small_space">
+
+
+    <RadioGroup
+        android:id="@+id/rg_customer_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_left"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_customer_tab_left_background"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/selector_customer_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_middle"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_customer_tab_middle_background"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/selector_customer_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_right"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-1dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_customer_tab_right_background"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/selector_customer_tab_text_color" />
+
+    </RadioGroup>
+
+</LinearLayout>
