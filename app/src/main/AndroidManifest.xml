@@ -12,11 +12,6 @@
             android:name=".Activity.MainActivity"
             android:label="首页">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
@@ -36,7 +31,15 @@
             android:label="文档详情" />
         <activity
             android:name=".Activity.UserInfoComplementActivity"
-            android:label="完善资料" />
+            android:label="完善资料">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".Activity.RechargeOnlineActivity"
             android:label="在线充值" />

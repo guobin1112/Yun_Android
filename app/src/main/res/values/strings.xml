@@ -41,4 +41,13 @@
     <string name="share_links_to_get_money">分享链接+10云币</string>
 
     <string name="visit_shop_to_get_money">访问商家+5云币</string>
+
+    <string name="user_info_input_name_hint">请输入您的名字</string>
+    <string name="user_info_input_birthday_hint">请选择您的生日</string>
+    <string name="user_info_input_telephone_hint">请输入您的手机号</string>
+    <string name="user_info_input_address_hint">请输入您的详细地址</string>
+    <string name="user_info_male">男</string>
+    <string name="user_info_female">女</string>
+    <string name="user_info_save">保存修改</string>
+
 </resources>

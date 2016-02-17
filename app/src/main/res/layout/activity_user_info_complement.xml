@@ -9,4 +9,79 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.yuncool.yun_android.Activity.UserInfoComplementActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/InputWithLeftIconWhiteBgGrayFrame"
+            android:drawableLeft="@drawable/user_name"
+            android:hint="@string/user_info_input_name_hint" />
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_normal_space"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/view_normal_height"
+                android:layout_gravity="left"
+                android:text="@string/user_info_male"
+                android:textColor="@color/colorTextSecondary" />
+
+            <RadioButton
+                android:id="@+id/rb_female"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/view_normal_height"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/view_large_space"
+                android:text="@string/user_info_female"
+                android:textColor="@color/colorTextSecondary" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_birthday"
+            style="@style/InputWithLeftIconWhiteBgGrayFrame"
+            android:layout_marginTop="@dimen/view_normal_space"
+            android:drawableLeft="@drawable/birthday"
+            android:gravity="left|center_vertical"
+            android:hint="@string/user_info_input_birthday_hint" />
+
+        <EditText
+            android:id="@+id/et_telephone"
+            style="@style/InputWithLeftIconWhiteBgGrayFrame"
+            android:layout_marginTop="@dimen/view_normal_space"
+            android:drawableLeft="@drawable/telephone"
+            android:hint="@string/user_info_input_telephone_hint" />
+
+        <EditText
+            android:id="@+id/et_address"
+            style="@style/InputWithLeftIconWhiteBgGrayFrame"
+            android:layout_marginTop="@dimen/view_normal_space"
+            android:drawableLeft="@drawable/address"
+            android:hint="@string/user_info_input_address_hint" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        style="@style/DefaultTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_normal_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/view_normal_space"
+        android:layout_marginLeft="@dimen/view_normal_space"
+        android:layout_marginRight="@dimen/view_normal_space"
+        android:background="@color/light_cyan"
+        android:text="@string/user_info_save"
+        android:textColor="@android:color/white" />
+
 </RelativeLayout>

@@ -63,4 +63,17 @@
 
     </style>
 
+    <style name="InputWithLeftIconWhiteBgGrayFrame" parent="DefaultTextStyle">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/view_normal_height</item>
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:background">@drawable/shape_rounded_white_background_with_gray_frame
+        </item>
+        <item name="android:drawablePadding">@dimen/view_normal_space</item>
+        <item name="android:paddingLeft">@dimen/view_normal_space</item>
+        <item name="android:singleLine">true</item>
+
+    </style>
+
 </resources>
