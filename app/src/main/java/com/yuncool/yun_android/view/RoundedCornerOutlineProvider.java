@@ -18,7 +18,7 @@ public class RoundedCornerOutlineProvider extends ViewOutlineProvider {
     @Override
     public void getOutline(View view, Outline outline) {
 
-        outline.setRoundRect(view.getLeft(), view.getTop(), view.getRight(), view.getBottom(),
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(),
                 view.getContext().getResources().getDimensionPixelSize(R.dimen.view_corner_radius));
 
     }

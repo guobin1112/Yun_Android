@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/view_normal_space">
+
+    <ImageView
+        android:id="@+id/iv_shop_pic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/colorTextHint" />
+
+    <Button
+        android:id="@+id/btn_visit_shop"
+        style="@style/DefaultTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_normal_height"
+        android:layout_marginBottom="@dimen/view_small_space"
+        android:layout_marginTop="@dimen/view_normal_space"
+        android:background="@color/light_cyan"
+        android:paddingLeft="@dimen/view_normal_space"
+        android:paddingRight="@dimen/view_normal_space"
+        android:text="@string/visit_shop_to_get_money"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

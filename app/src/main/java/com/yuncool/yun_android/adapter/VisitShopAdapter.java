@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
@@ -19,22 +18,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Black on 2016/2/16.
+ * Created by Black on 2016/2/17.
  */
-public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.ViewHolder> {
+public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.ViewHolder> {
 
-    private List<ShopModel> modelList = new ArrayList<>();
+    List<ShopModel> modelList = new ArrayList<>();
 
-    public ShareLinksAdapter(List<ShopModel> modelList) {
+    public VisitShopAdapter(List<ShopModel> modelList) {
         this.modelList = modelList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_share_links, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_visit_shop, parent, false);
 
         return new ViewHolder(view);
+
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -44,15 +44,12 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
         //TODO
         holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
         holder.iv_shop_pic.setClipToOutline(true);
-        holder.tv_shop_name.setText(modelList.get(position).shopName);
-        holder.tv_area.setText(modelList.get(position).area);
 
-        holder.btn_share_link.setOnClickListener(new View.OnClickListener() {
+        holder.btn_visit_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO
                 Toast.makeText(view.getContext(), "正在开发中", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -65,17 +62,15 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView iv_shop_pic;
-        public TextView tv_shop_name;
-        public Button btn_share_link;
-        public TextView tv_area;
+        public Button btn_visit_shop;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             this.iv_shop_pic = (ImageView) itemView.findViewById(R.id.iv_shop_pic);
-            this.tv_shop_name = (TextView) itemView.findViewById(R.id.tv_shop_name);
-            this.btn_share_link = (Button) itemView.findViewById(R.id.btn_share_link);
-            this.tv_area = (TextView) itemView.findViewById(R.id.tv_area);
+            this.btn_visit_shop = (Button) itemView.findViewById(R.id.btn_visit_shop);
+
         }
     }
 }
