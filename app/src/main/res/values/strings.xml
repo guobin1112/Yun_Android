@@ -37,4 +37,6 @@
     <string name="upload_file_waiting_print">待打印</string>
     <string name="upload_file_uploading_speed">上传速度</string>
     <string name="upload_file_done">已完成</string>
+
+    <string name="share_links_to_get_money">分享链接+10云币</string>
 </resources>

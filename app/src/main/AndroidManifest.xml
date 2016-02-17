@@ -50,7 +50,8 @@
         <activity android:name=".Activity.PrintActivity" />
         <activity android:name=".Activity.SocialActivity" />
         <activity android:name=".Activity.SignInActivity" />
-        <activity android:name=".Activity.MicroLibListActivity"></activity>
+        <activity android:name=".Activity.MicroLibListActivity" />
+        <activity android:name=".Activity.ShareLinksActivity"></activity>
     </application>
 
 </manifest>
