@@ -1,12 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.yuncool.yun_android.Activity.RechargeOnlineActivity">
 
-</RelativeLayout>
+    <RadioGroup
+        android:id="@+id/rg_recharge_online"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_recharge"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_tab_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/recharge_online_recharge_money"
+            android:textColor="@drawable/selector_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_pay_by_friend"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_tab_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/recharge_online_pay_by_friend"
+            android:textColor="@drawable/selector_tab_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_open_service"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_tab_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/recharge_online_open_service"
+            android:textColor="@drawable/selector_tab_text_color" />
+
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/iv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorTextHint" />
+
+    <View
+        style="@style/LineStyle"
+        android:layout_marginTop="@dimen/view_normal_space" />
+
+    <EditText
+        android:id="@+id/et_account"
+        style="@style/DefaultTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:background="@android:color/white"
+        android:hint="@string/recharge_online_input_account_hint"
+        android:paddingLeft="@dimen/view_normal_space" />
+
+    <View style="@style/LineStyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_normal_space"
+        android:layout_marginTop="@dimen/view_small_space"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/recharge_online_money_left"
+            android:textColor="@color/colorTextSecondary" />
+
+        <TextView
+            android:id="@+id/tv_money_left_number"
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="10云币"
+            android:textColor="@color/colorTextSecondary" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:layout_marginTop="@dimen/view_small_space"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_pay_money_number"
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:text="8.0"
+            android:textColor="@color/orange"
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_small_space"
+            android:text="@string/recharge_online_yuan"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_discount_info"
+            style="@style/DefaultTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_small_space"
+            android:text="（8折）"
+            android:textColor="@color/colorTextSecondary" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_recharge"
+        style="@style/DefaultTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:layout_marginLeft="@dimen/view_normal_space"
+        android:layout_marginRight="@dimen/view_normal_space"
+        android:layout_marginTop="@dimen/view_normal_space"
+        android:background="@drawable/shape_rounded_button_primary_color_background"
+        android:text="@string/recharge_online_right_away"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

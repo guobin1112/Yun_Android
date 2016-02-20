@@ -50,4 +50,13 @@
     <string name="user_info_female">女</string>
     <string name="user_info_save">保存修改</string>
 
+    <string name="recharge_online_recharge_money">云币充值</string>
+    <string name="recharge_online_pay_by_friend">朋友代付</string>
+    <string name="recharge_online_open_service">服务开通</string>
+    <string name="recharge_online_money_left">余额：</string>
+    <string name="recharge_online_yun_money">云币</string>
+    <string name="recharge_online_right_away">立即充值</string>
+    <string name="recharge_online_input_account_hint">请输入您的账号</string>
+    <string name="recharge_online_yuan">元</string>
+
 </resources>

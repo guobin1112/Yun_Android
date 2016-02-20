@@ -11,13 +11,11 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="首页">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.LoginActivity"
@@ -53,10 +51,9 @@
         <activity android:name=".Activity.SocialActivity" />
         <activity android:name=".Activity.SignInActivity" />
         <activity android:name=".Activity.MicroLibListActivity" />
-        <activity android:name=".Activity.ShareLinksActivity"></activity>
-        <activity android:name=".Activity.VisitShopActivity">
-
-        </activity>
+        <activity android:name=".Activity.ShareLinksActivity" />
+        <activity android:name=".Activity.VisitShopActivity"></activity>
+        <activity android:name=".Activity.EarnYunMoneyActivity"></activity>
     </application>
 
 </manifest>
