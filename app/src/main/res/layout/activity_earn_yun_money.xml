@@ -6,5 +6,130 @@
     android:orientation="vertical"
     tools:context="com.yuncool.yun_android.Activity.EarnYunMoneyActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_normal_height"
+        android:padding="@dimen/view_small_space">
 
+        <EditText
+            android:id="@+id/et_search"
+            style="@style/SearchInputStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_share"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/share_to_get_money"
+            android:text="@string/earn_money_share" />
+
+        <View style="@style/LineWithMarginLeftStyle" />
+
+        <TextView
+            android:id="@+id/tv_favor"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/favor_to_get_money"
+            android:text="@string/earn_money_favor" />
+
+        <View style="@style/LineWithMarginLeftStyle" />
+
+        <TextView
+            android:id="@+id/tv_scan"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/scan_to_get_money"
+            android:text="@string/earn_money_scan" />
+
+        <View style="@style/LineWithMarginLeftStyle" />
+
+        <TextView
+            android:id="@+id/tv_sign_in"
+            style="@style/InputWithLeftIconRightArrowStyle"
+            android:drawableLeft="@drawable/sign_in_to_get_money"
+            android:text="@string/earn_money_sign_in" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/view_normal_space"
+        android:layout_marginRight="@dimen/view_normal_space"
+        android:layout_marginTop="@dimen/view_large_space"
+        android:background="@drawable/shape_rounded_background_with_gray_frame"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_half_rounded_white_background_with_gray_frame"
+            android:padding="@dimen/view_small_space"
+            android:text="@string/earn_money_task"
+            android:textColor="@color/colorPrimary" />
+
+        <RelativeLayout
+            android:id="@+id/rl_complete_info"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_normal_height"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/view_large_space"
+                android:text="@string/earn_money_complete_info" />
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/view_large_space"
+                android:text="+10云币"
+                android:textColor="@color/orange" />
+
+
+        </RelativeLayout>
+
+        <View
+            style="@style/LineStyle"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_normal_space" />
+
+        <RelativeLayout
+            android:id="@+id/rl_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_normal_height"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/view_large_space"
+                android:text="@string/earn_money_recommend" />
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/view_large_space"
+                android:text="+10云币"
+                android:textColor="@color/orange" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
 </LinearLayout>

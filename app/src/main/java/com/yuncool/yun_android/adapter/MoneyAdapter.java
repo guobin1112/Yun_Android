@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
 import com.yuncool.yun_android.R;
@@ -38,9 +39,18 @@ public class MoneyAdapter extends RecyclerView.Adapter<MoneyAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         int moneyNumber = list.get(position);
+
+        if (onItemClickListener != null) {
+            holder.tb_money.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+        }
 
         if (moneyNumber > 0) {
 

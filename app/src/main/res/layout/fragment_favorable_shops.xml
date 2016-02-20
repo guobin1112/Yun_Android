@@ -24,20 +24,13 @@
 
         <EditText
             android:id="@+id/et_search"
+            style="@style/SearchInputStyle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/view_normal_space"
             android:layout_weight="4"
-            android:background="@drawable/shape_search_input_background"
-            android:drawableLeft="@drawable/search"
-            android:drawablePadding="@dimen/view_small_space"
             android:hint="@string/shop_search_hint"
-            android:imeOptions="actionSearch"
-            android:paddingLeft="@dimen/view_small_space"
-            android:singleLine="true"
-            android:textColor="@color/colorTextPrimary"
-            android:textColorHint="@color/colorTextHint"
-            android:textSize="@dimen/font_normal" />
+            android:paddingLeft="@dimen/view_small_space" />
 
     </LinearLayout>
 

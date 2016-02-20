@@ -51,7 +51,7 @@
         <activity android:name=".Activity.SocialActivity" />
         <activity android:name=".Activity.SignInActivity" />
         <activity android:name=".Activity.MicroLibListActivity" />
-        <activity android:name=".Activity.ShareLinksActivity" />
+        <activity android:name=".Activity.ShareLinksActivity"></activity>
         <activity android:name=".Activity.VisitShopActivity"></activity>
         <activity android:name=".Activity.EarnYunMoneyActivity"></activity>
     </application>

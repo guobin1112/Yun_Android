@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.ShopModel;
-import com.yuncool.yun_android.view.RoundedCornerOutlineProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +41,8 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         //TODO
-        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
-        holder.iv_shop_pic.setClipToOutline(true);
+//        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
+//        holder.iv_shop_pic.setClipToOutline(true);
         holder.tv_shop_name.setText(modelList.get(position).shopName);
         holder.tv_area.setText(modelList.get(position).area);
 

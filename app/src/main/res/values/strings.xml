@@ -4,6 +4,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="search">搜索</string>
+    <string name="submit">提交</string>
+    <string name="sure">确认</string>
+    <string name="cancel">取消</string>
+
     <string-array name="shop_location_array">
         <item>杭州</item>
         <item>上海</item>
@@ -58,5 +65,13 @@
     <string name="recharge_online_right_away">立即充值</string>
     <string name="recharge_online_input_account_hint">请输入您的账号</string>
     <string name="recharge_online_yuan">元</string>
+
+    <string name="earn_money_share">分享链接赚云币</string>
+    <string name="earn_money_favor">关注商家赚云币</string>
+    <string name="earn_money_scan">扫条形码赚云币</string>
+    <string name="earn_money_sign_in">每日签到</string>
+    <string name="earn_money_task">云币任务</string>
+    <string name="earn_money_complete_info">完善资料</string>
+    <string name="earn_money_recommend">推荐好友</string>
 
 </resources>

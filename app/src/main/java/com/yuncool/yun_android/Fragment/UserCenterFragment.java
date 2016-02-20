@@ -1,6 +1,7 @@
 package com.yuncool.yun_android.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.yuncool.yun_android.Activity.EarnYunMoneyActivity;
+import com.yuncool.yun_android.Activity.RechargeOnlineActivity;
 import com.yuncool.yun_android.R;
 
 /**
@@ -65,17 +67,20 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+
+        Intent intent;
+
         switch (view.getId()) {
             case R.id.tv_get_yun_money:
-                //TODO
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), EarnYunMoneyActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.tv_recharge_online:
-                //TODO
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), RechargeOnlineActivity.class);
+                startActivity(intent);
 
                 break;
         }

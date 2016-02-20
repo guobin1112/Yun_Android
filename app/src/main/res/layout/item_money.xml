@@ -3,11 +3,13 @@
     style="@style/DefaultTextStyle"
     android:layout_width="wrap_content"
     android:layout_height="@dimen/button_normal_height"
+    android:layout_marginLeft="@dimen/view_small_space"
+    android:layout_marginRight="@dimen/view_small_space"
     android:background="@drawable/selector_rbtn_background"
     android:checked="false"
     android:orientation="vertical"
     android:textColor="@drawable/selector_rbtn_text_color"
-    android:textOff="123"
-    android:textOn="123">
+    android:textOff=""
+    android:textOn="">
 
 </ToggleButton>

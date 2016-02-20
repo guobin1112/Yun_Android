@@ -98,12 +98,74 @@
 
     </LinearLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_money"
+    <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="@dimen/view_normal_height"
+        android:layout_marginLeft="@dimen/view_small_space"
+        android:layout_marginRight="@dimen/view_small_space"
+        android:layout_marginTop="@dimen/view_normal_space"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/view_small_space"
+        android:paddingTop="@dimen/view_small_space">
 
-    </android.support.v7.widget.RecyclerView>
+        <RadioButton
+            android:id="@+id/rb_10"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_small_space"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rbtn_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="10云币"
+            android:textColor="@drawable/selector_rbtn_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_20"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_small_space"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rbtn_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="20云币"
+            android:textColor="@drawable/selector_rbtn_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_100"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_small_space"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rbtn_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="100云币"
+            android:textColor="@drawable/selector_rbtn_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_other"
+            style="@style/DefaultTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/view_normal_space"
+            android:layout_marginRight="@dimen/view_small_space"
+            android:layout_weight="1"
+            android:background="@drawable/selector_rbtn_background"
+            android:button="@null"
+            android:gravity="center"
+            android:text="其他数据"
+            android:textColor="@drawable/selector_rbtn_text_color" />
+
+
+    </RadioGroup>
 
     <LinearLayout
         android:layout_width="match_parent"
