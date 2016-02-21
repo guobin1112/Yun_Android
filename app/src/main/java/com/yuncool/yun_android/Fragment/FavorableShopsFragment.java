@@ -1,6 +1,7 @@
 package com.yuncool.yun_android.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.yuncool.yun_android.Activity.ShopDetailActivity;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.adapter.ShopAdapter;
 import com.yuncool.yun_android.model.ShopModel;
@@ -97,7 +99,13 @@ public class FavorableShopsFragment extends BaseFragment {
     }
 
     private void initEvent() {
-        //TODO
+        rvAdapter.setOnItemClickListener(new ShopAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getActivity(), ShopDetailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

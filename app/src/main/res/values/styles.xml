@@ -83,6 +83,7 @@
         <item name="android:imeOptions">actionSearch</item>
         <item name="android:singleLine">true</item>
         <item name="android:hint">@string/search</item>
+        <item name="android:paddingLeft">@dimen/view_small_space</item>
     </style>
 
 </resources>

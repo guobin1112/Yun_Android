@@ -74,4 +74,11 @@
     <string name="earn_money_complete_info">完善资料</string>
     <string name="earn_money_recommend">推荐好友</string>
 
+    <string name="shop_detail_book">免预约</string>
+    <string name="shop_detail_nearest">离我最近</string>
+    <string name="shop_detail_validate_time">有效期</string>
+    <string name="shop_detail_book_info">预约信息</string>
+    <string name="shop_detail_rules">规则提醒</string>
+    <string name="shop_detail_service">商家服务</string>
+
 </resources>

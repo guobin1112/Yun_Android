@@ -19,6 +19,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     private List<ShopModel> modelList;
 
+    private OnItemClickListener onItemClickListener;
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView iv_shop;
         public TextView tv_shop;
@@ -47,13 +49,34 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.iv_shop.setImageResource(modelList.get(position).shopImageResId);
         holder.tv_shop.setText(modelList.get(position).shopName);
+
+        if (onItemClickListener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+
+        }
     }
+
 
     @Override
     public int getItemCount() {
         return modelList.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+
+        void onItemClick(int position);
+
     }
 }

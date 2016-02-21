@@ -1,5 +1,6 @@
 package com.yuncool.yun_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -82,6 +83,14 @@ public class VisitShopActivity extends AppCompatActivity {
     }
 
     private void initEvent() {
+
+        adapter.setOnItemClickListener(new VisitShopAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(VisitShopActivity.this, ShopDetailActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

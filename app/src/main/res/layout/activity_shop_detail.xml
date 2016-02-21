@@ -1,12 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.yuncool.yun_android.Activity.ShopDetailActivity">
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_normal_height"
+            android:padding="@dimen/view_small_space">
+
+            <EditText
+                android:id="@+id/et_search"
+                style="@style/SearchInputStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_shop_pic"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorTextHint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/view_small_space"
+            android:paddingRight="@dimen/view_small_space">
+
+            <TextView
+                android:id="@+id/tv_shop_name"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_normal_space"
+                android:text="晓得自主火锅"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_action"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/view_small_space"
+                android:background="@drawable/shape_rounded_button_primary_color_background"
+                android:text="立即分享"
+                android:textColor="@android:color/white" />
+
+            <View
+                style="@style/LineStyle"
+                android:layout_marginLeft="@dimen/view_small_space"
+                android:layout_marginRight="@dimen/view_small_space"
+                android:layout_marginTop="@dimen/view_normal_space" />
+
+            <TextView
+                android:id="@+id/tv_book"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_normal_space"
+                android:drawableLeft="@drawable/book"
+                android:drawablePadding="@dimen/view_small_space"
+                android:text="@string/shop_detail_book"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/font_small" />
+
+            <TextView
+                android:id="@+id/tv_days_left"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:drawableLeft="@drawable/days_left"
+                android:drawablePadding="@dimen/view_small_space"
+                android:text="剩余125天"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/font_small" />
+
+            <View
+                style="@style/LineStyle"
+                android:layout_marginBottom="@dimen/view_normal_space"
+                android:layout_marginLeft="@dimen/view_small_space"
+                android:layout_marginRight="@dimen/view_small_space"
+                android:layout_marginTop="@dimen/view_normal_space" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_small_space"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/view_small_space"
+            android:paddingRight="@dimen/view_small_space">
+
+            <TextView
+                android:id="@+id/tv_nearest"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_normal_space"
+                android:text="@string/shop_detail_nearest"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/font_small" />
+
+            <TextView
+                android:id="@+id/tv_shop_branch_name"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_nearest"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="笕桥店" />
+
+            <RatingBar
+                android:id="@+id/rb_elevation"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@id/tv_shop_branch_name"
+                android:isIndicator="true"
+                android:minHeight="@dimen/view_normal_height"
+                android:progressDrawable="@drawable/layer_list_rating_bar_drawable_background"
+                android:rating="3.5"
+                android:stepSize="0.5" />
+
+            <TextView
+                android:id="@+id/tv_shop_branch_address"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rb_elevation"
+                android:layout_marginBottom="@dimen/view_small_space"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="江干区机场路250号泰尚达创意园内" />
+
+            <ImageButton
+                android:id="@+id/ib_shop_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:padding="@dimen/view_small_space"
+                android:src="@drawable/shop_phone" />
+
+            <View
+                android:id="@+id/divider"
+                style="@style/LineStyle"
+                android:layout_width="@dimen/view_min_dimen"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/view_small_space"
+                android:layout_toLeftOf="@id/ib_shop_phone" />
+
+
+            <TextView
+                android:id="@+id/tv_distance"
+                style="@style/DefaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_shop_branch_name"
+                android:layout_marginRight="@dimen/view_small_space"
+                android:layout_toLeftOf="@id/divider"
+                android:text="38.4km"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/font_small" />
+
+        </RelativeLayout>
+
+        <View style="@style/LineStyle" />
+
+        <View
+            style="@style/LineStyle"
+            android:layout_marginTop="@dimen/view_small_space" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/view_small_space">
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shop_detail_validate_time" />
+
+            <TextView
+                android:id="@+id/tv_validate_time"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="2016-2-20至2016-8-20" />
+
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_large_space"
+                android:text="@string/shop_detail_book_info" />
+
+            <TextView
+                android:id="@+id/tv_shop_info"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="无需预约，如遇消费高峰时段您可能需要排队" />
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_large_space"
+                android:text="@string/shop_detail_rules" />
+
+            <TextView
+                android:id="@+id/tv_rules"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="不再与店内其他优惠同享" />
+
+            <TextView
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_large_space"
+                android:text="@string/shop_detail_service" />
+
+            <TextView
+                android:id="@+id/tv_service"
+                style="@style/DefaultTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_small_space"
+                android:text="停车位信息详询商户" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

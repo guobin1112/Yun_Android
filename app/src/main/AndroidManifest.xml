@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yuncool.yun_android">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,11 +12,13 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="首页">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Activity.LoginActivity"
@@ -25,7 +28,11 @@
             android:label="注册" />
         <activity
             android:name=".Activity.ShopDetailActivity"
-            android:label="商铺详情" />
+            android:label="商铺详情"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
         <activity
             android:name=".Activity.MyDocumentActivity"
             android:label="我的文档" />

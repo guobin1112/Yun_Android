@@ -23,6 +23,8 @@ public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.View
 
     List<ShopModel> modelList = new ArrayList<>();
 
+    private OnItemClickListener onItemClickListener;
+
     public VisitShopAdapter(List<ShopModel> modelList) {
         this.modelList = modelList;
     }
@@ -38,7 +40,7 @@ public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.View
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         //TODO
 //        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
@@ -51,6 +53,15 @@ public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.View
                 Toast.makeText(view.getContext(), "正在开发中", Toast.LENGTH_SHORT).show();
             }
         });
+
+        if (onItemClickListener != null) {
+            holder.iv_shop_pic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+        }
 
     }
 
@@ -71,5 +82,15 @@ public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.View
             this.btn_visit_shop = (Button) itemView.findViewById(R.id.btn_visit_shop);
 
         }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+
+        void onItemClick(int position);
+
     }
 }
