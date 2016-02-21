@@ -24,6 +24,8 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
 
     private List<ShopModel> modelList = new ArrayList<>();
 
+    private OnItemClickListener onItemClickListener;
+
     public ShareLinksAdapter(List<ShopModel> modelList) {
         this.modelList = modelList;
     }
@@ -38,7 +40,7 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         //TODO
 //        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
@@ -55,11 +57,31 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
             }
         });
 
+        if (onItemClickListener != null) {
+
+            holder.iv_shop_pic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+
+        }
+
     }
 
     @Override
     public int getItemCount() {
         return modelList.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+
+        void onItemClick(int position);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

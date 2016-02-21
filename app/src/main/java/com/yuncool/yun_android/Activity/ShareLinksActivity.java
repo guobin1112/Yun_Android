@@ -1,5 +1,6 @@
 package com.yuncool.yun_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -67,6 +68,14 @@ public class ShareLinksActivity extends AppCompatActivity {
     }
 
     private void initEvent() {
+
+        adapter.setOnItemClickListener(new ShareLinksAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(ShareLinksActivity.this, ShopDetailActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
