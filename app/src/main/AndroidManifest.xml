@@ -50,17 +50,32 @@
             android:label="上传文件" />
         <activity
             android:name=".Activity.MicroLibraryActivity"
-            android:label="微信资料库" />
+            android:label="微型资料库"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Activity.RecommendActivity"
             android:label="推荐好友" />
-        <activity android:name=".Activity.PrintActivity" />
-        <activity android:name=".Activity.SocialActivity" />
-        <activity android:name=".Activity.SignInActivity" />
-        <activity android:name=".Activity.MicroLibListActivity" />
-        <activity android:name=".Activity.ShareLinksActivity"></activity>
-        <activity android:name=".Activity.VisitShopActivity"></activity>
-        <activity android:name=".Activity.EarnYunMoneyActivity"></activity>
+        <activity
+            android:name=".Activity.PrintActivity"
+            android:label="我要打印" />
+        <activity
+            android:name=".Activity.SocialActivity"
+            android:label="互动小站" />
+        <activity
+            android:name=".Activity.SignInActivity"
+            android:label="每日签到" />
+        <activity
+            android:name=".Activity.MicroLibListActivity"
+            android:label="微型资料库" />
+        <activity
+            android:name=".Activity.ShareLinksActivity"
+            android:label="分享链接" />
+        <activity
+            android:name=".Activity.VisitShopActivity"
+            android:label="关注商家" />
+        <activity
+            android:name=".Activity.EarnYunMoneyActivity"
+            android:label="赚取云币" />
     </application>
 
 </manifest>

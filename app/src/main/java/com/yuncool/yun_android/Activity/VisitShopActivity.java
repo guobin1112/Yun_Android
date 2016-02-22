@@ -2,7 +2,6 @@ package com.yuncool.yun_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -14,7 +13,7 @@ import com.yuncool.yun_android.view.GridSpaceItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VisitShopActivity extends AppCompatActivity {
+public class VisitShopActivity extends BaseActivity {
 
     private RecyclerView rv_visit_shop;
 

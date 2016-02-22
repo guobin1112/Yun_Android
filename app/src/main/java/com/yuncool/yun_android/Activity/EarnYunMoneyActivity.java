@@ -2,7 +2,6 @@ package com.yuncool.yun_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -11,7 +10,7 @@ import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
 
-public class EarnYunMoneyActivity extends AppCompatActivity implements View.OnClickListener {
+public class EarnYunMoneyActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText et_search;
     private TextView tv_share, tv_favor, tv_scan, tv_sign_in;

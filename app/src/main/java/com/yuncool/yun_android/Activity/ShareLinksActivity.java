@@ -2,7 +2,6 @@ package com.yuncool.yun_android.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -13,7 +12,7 @@ import com.yuncool.yun_android.model.ShopModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShareLinksActivity extends AppCompatActivity {
+public class ShareLinksActivity extends BaseActivity {
 
     private RecyclerView rv_share_links;
 

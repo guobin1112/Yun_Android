@@ -20,7 +20,8 @@
             android:id="@+id/sp_location"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/et_search"
@@ -31,6 +32,7 @@
             android:layout_weight="4"
             android:hint="@string/shop_search_hint"
             android:paddingLeft="@dimen/view_small_space" />
+
 
     </LinearLayout>
 
@@ -67,7 +69,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_shops"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/view_small_space"
         android:background="@color/colorWindowBackground" />

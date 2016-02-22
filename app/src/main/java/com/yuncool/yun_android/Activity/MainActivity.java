@@ -1,5 +1,6 @@
 package com.yuncool.yun_android.Activity;
 
+import android.app.ActionBar;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class MainActivity extends BaseActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
 
+    private ActionBar actionBar;
+
     private final static int MAIN = 0, SCAN = 1, FAVORABLE_SHOP = 2, USER_CENTER = 3;
 
     @Override
@@ -40,7 +43,7 @@ public class MainActivity extends BaseActivity {
         rb_shop_cart = (RadioButton) findViewById(R.id.rb_shop_cart);
         rb_user_center = (RadioButton) findViewById(R.id.rb_user_center);
         fl_fragment = (FrameLayout) findViewById(R.id.fl_fragment);
-
+        actionBar = getActionBar();
     }
 
     private void initEvent() {
@@ -59,12 +62,19 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.replace(R.id.fl_fragment, mainFragment);
                         fragmentTransaction.commit();
 
+
                         break;
                     case R.id.rb_scan:
+
+                        if (actionBar != null) {
+                            actionBar.setTitle("扫一扫");
+                        }
+
 
                         ScanFragment scanFragment = new ScanFragment();
                         fragmentTransaction.replace(R.id.fl_fragment, scanFragment);
                         fragmentTransaction.commit();
+
 
                         break;
                     case R.id.rb_shop_cart:
@@ -73,12 +83,20 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.replace(R.id.fl_fragment, favorableShopsFragment);
                         fragmentTransaction.commit();
 
+                        if (actionBar != null) {
+                            actionBar.setTitle("惠购商铺");
+                        }
+
                         break;
                     case R.id.rb_user_center:
 
                         UserCenterFragment userCenterFragment = new UserCenterFragment();
                         fragmentTransaction.replace(R.id.fl_fragment, userCenterFragment);
                         fragmentTransaction.commit();
+
+                        if (actionBar != null) {
+                            actionBar.setTitle("个人中心");
+                        }
 
                         break;
                     default:
