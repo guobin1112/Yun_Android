@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yuncool.yun_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,13 +16,11 @@
         <activity
             android:name=".Activity.MainActivity"
             android:label="首页">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Activity.LoginActivity"
@@ -29,10 +31,7 @@
         <activity
             android:name=".Activity.ShopDetailActivity"
             android:label="商铺详情"
-            android:windowSoftInputMode="stateHidden">
-
-        </activity>
-
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".Activity.MyDocumentActivity"
             android:label="我的文档" />
@@ -76,6 +75,8 @@
         <activity
             android:name=".Activity.EarnYunMoneyActivity"
             android:label="赚取云币" />
+        <activity android:name=".Activity.VolleyTestActivity"></activity>
+        <activity android:name=".Activity.LocalFilesActivity"></activity>
     </application>
 
 </manifest>

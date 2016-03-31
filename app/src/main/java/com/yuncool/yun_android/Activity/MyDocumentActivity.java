@@ -1,5 +1,6 @@
 package com.yuncool.yun_android.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -92,7 +93,8 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.btn_category:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyDocumentActivity.this, LocalFilesActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.btn_common_software:
