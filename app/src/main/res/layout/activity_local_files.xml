@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yuncool.yun_android.Activity.LocalFilesActivity">
+    tools:context=".Activity.FilesActivity">
 
     <ListView
         android:id="@+id/lv_file"

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.util.Constant;
 
 public class MyDocumentActivity extends BaseActivity implements View.OnClickListener {
 
@@ -60,40 +61,55 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+
+        Intent intent;
+
         switch (view.getId()) {
             case R.id.btn_doc:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.DOC.getVal());
+                startActivity(intent);
 
                 break;
             case R.id.btn_ppt:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.PPT.getVal());
+                startActivity(intent);
 
                 break;
             case R.id.btn_xls:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.XLS.getVal());
+                startActivity(intent);
 
                 break;
             case R.id.btn_pdf:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.PDF.getVal());
+                startActivity(intent);
 
                 break;
             case R.id.btn_txt:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.TXT.getVal());
+                startActivity(intent);
 
                 break;
             case R.id.btn_other:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
-
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.OTHER.getVal());
+                startActivity(intent);
                 break;
             case R.id.btn_category:
 
-                Intent intent = new Intent(MyDocumentActivity.this, LocalFilesActivity.class);
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.LOCAL.getVal());
                 startActivity(intent);
 
                 break;

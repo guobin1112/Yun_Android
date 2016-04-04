@@ -76,7 +76,7 @@
             android:name=".Activity.EarnYunMoneyActivity"
             android:label="赚取云币" />
         <activity android:name=".Activity.VolleyTestActivity"></activity>
-        <activity android:name=".Activity.LocalFilesActivity"></activity>
+        <activity android:name=".Activity.FilesActivity"></activity>
     </application>
 
 </manifest>
