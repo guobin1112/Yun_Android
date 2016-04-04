@@ -62,6 +62,9 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.replace(R.id.fl_fragment, mainFragment);
                         fragmentTransaction.commit();
 
+                        if (actionBar != null) {
+                            actionBar.setTitle("随手印");
+                        }
 
                         break;
                     case R.id.rb_scan:

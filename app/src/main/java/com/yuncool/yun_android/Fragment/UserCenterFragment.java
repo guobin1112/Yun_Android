@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,7 +18,7 @@ import com.yuncool.yun_android.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UserCenterFragment extends BaseFragment implements View.OnClickListener {
+public class UserCenterFragment extends BaseFragment implements View.OnClickListener, View.OnTouchListener {
 
     private ImageView iv_head_pic;
     private TextView tv_user_name, tv_account, tv_yun_money_number, tv_discount_number,
@@ -39,6 +40,8 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         initData();
         initView(view);
         initEvent();
+
+        view.setOnTouchListener(this);
 
         return view;
     }
@@ -84,5 +87,11 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
 
                 break;
         }
+    }
+
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        return true;
     }
 }

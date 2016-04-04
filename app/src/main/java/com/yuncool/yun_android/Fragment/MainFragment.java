@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -18,7 +19,7 @@ import com.yuncool.yun_android.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends BaseFragment implements View.OnClickListener {
+public class MainFragment extends BaseFragment implements View.OnClickListener, View.OnTouchListener {
 
 
     ImageButton ib_print, ib_micro_lib, ib_shop, ib_user_center, ib_social;
@@ -39,6 +40,8 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
         initData();
         initView(view);
         initEvent();
+
+        view.setOnTouchListener(this);
 
         return view;
     }
@@ -103,5 +106,10 @@ public class MainFragment extends BaseFragment implements View.OnClickListener {
 
                 break;
         }
+    }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        return true;
     }
 }
