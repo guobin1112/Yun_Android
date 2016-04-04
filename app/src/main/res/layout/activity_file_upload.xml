@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:leftText="@string/upload_file_waiting_print"
-        app:middleText="@string/upload_file_waiting_print"
+        app:middleText="@string/upload_file_uploading_speed"
         app:rightText="@string/upload_file_done">
 
     </com.yuncool.yun_android.view.CustomerTabView>

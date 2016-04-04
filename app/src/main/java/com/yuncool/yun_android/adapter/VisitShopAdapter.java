@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.ShopModel;
@@ -46,16 +45,16 @@ public class VisitShopAdapter extends RecyclerView.Adapter<VisitShopAdapter.View
 //        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
 //        holder.iv_shop_pic.setClipToOutline(true);
 
-        holder.btn_visit_shop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //TODO
-                Toast.makeText(view.getContext(), "正在开发中", Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.iv_shop_pic.setImageResource(modelList.get(position).shopImageResId);
 
         if (onItemClickListener != null) {
             holder.iv_shop_pic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(position);
+                }
+            });
+            holder.btn_visit_shop.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     onItemClickListener.onItemClick(position);

@@ -9,6 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerVertical="true"
+        android:scaleType="centerInside"
         android:layout_marginLeft="@dimen/view_normal_space"
         android:background="@color/colorWindowBackground" />
 

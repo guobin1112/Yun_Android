@@ -13,8 +13,9 @@ public class ShopModel {
         this.shopName = shopName;
     }
 
-    public ShopModel(String shopName, String area) {
+    public ShopModel(String shopName, String area, int shopImageResId) {
         this.shopName = shopName;
         this.area = area;
+        this.shopImageResId = shopImageResId;
     }
 }

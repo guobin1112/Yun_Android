@@ -37,16 +37,16 @@ public class MicroLibListActivity extends BaseActivity {
         modelList.add(new MicroLibListItemModel("14", "May", "二重积分"));
         modelList.add(new MicroLibListItemModel("13", "May", "行列式"));
         modelList.add(new MicroLibListItemModel("12", "May", "拉格朗日定理"));
-        modelList.add(new MicroLibListItemModel("11", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("9", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("8", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("7", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("6", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("5", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("4", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("3", "May", "微积分"));
+        modelList.add(new MicroLibListItemModel("11", "May", "常数项级数"));
+        modelList.add(new MicroLibListItemModel("9", "May", "多元函数的极值"));
+        modelList.add(new MicroLibListItemModel("8", "May", "多元函数的求导法则"));
+        modelList.add(new MicroLibListItemModel("7", "May", "多元函数的偏导数"));
+        modelList.add(new MicroLibListItemModel("6", "May", "格林公式"));
+        modelList.add(new MicroLibListItemModel("5", "May", "函数求导"));
+        modelList.add(new MicroLibListItemModel("4", "May", "拉格朗日中值定理"));
+        modelList.add(new MicroLibListItemModel("3", "May", "洛必达法则"));
         modelList.add(new MicroLibListItemModel("2", "May", "微积分"));
-        modelList.add(new MicroLibListItemModel("1", "May", "微积分"));
+        modelList.add(new MicroLibListItemModel("1", "May", "多重积分"));
 
     }
 

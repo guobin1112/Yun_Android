@@ -34,23 +34,18 @@ public class ShareLinksActivity extends BaseActivity {
 
     private void initData() {
 
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
-        modelList.add(new ShopModel("晓得自主火锅", "江干区"));
+        modelList.add(new ShopModel("晓得自主火锅", "江干区", R.drawable.shop1));
+        modelList.add(new ShopModel("陆老爹猪脚", "萧山区", R.drawable.shop2));
+        modelList.add(new ShopModel("世纪联华屏峰连锁店", "西湖区", R.drawable.shop3));
+        modelList.add(new ShopModel("零妹妹石马店", "西湖区", R.drawable.shop4));
+        modelList.add(new ShopModel("杨铭宇黄焖鸡", "西湖区", R.drawable.shop5));
+        modelList.add(new ShopModel("晓德自主火锅", "西湖区", R.drawable.shop6));
+        modelList.add(new ShopModel("晓得自主火锅", "江干区", R.drawable.shop1));
+        modelList.add(new ShopModel("陆老爹猪脚", "萧山区", R.drawable.shop2));
+        modelList.add(new ShopModel("世纪联华屏峰连锁店", "西湖区", R.drawable.shop3));
+        modelList.add(new ShopModel("零妹妹石马店", "西湖区", R.drawable.shop4));
+        modelList.add(new ShopModel("杨铭宇黄焖鸡", "西湖区", R.drawable.shop5));
+        modelList.add(new ShopModel("晓德自主火锅", "西湖区", R.drawable.shop6));
 
     }
 

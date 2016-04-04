@@ -62,23 +62,21 @@ public class FavorableShopsFragment extends BaseFragment implements View.OnTouch
 
     private void initData() {
         modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
+        modelList.add(new ShopModel(R.drawable.shop_2, "正宗重庆万州烤鱼"));
+        modelList.add(new ShopModel(R.drawable.shop_3, "暗香盛宴中餐厅"));
+        modelList.add(new ShopModel(R.drawable.shop_4, "伤心酸辣粉"));
+        modelList.add(new ShopModel(R.drawable.shop_5, "浪漫时光韩式自助餐厅"));
+        modelList.add(new ShopModel(R.drawable.shop_6, "舌尖上的烤鱼"));
+        modelList.add(new ShopModel(R.drawable.shop_7, "晓德自助火锅"));
+        modelList.add(new ShopModel(R.drawable.shop_8, "陆老爹猪脚"));
         modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-
+        modelList.add(new ShopModel(R.drawable.shop_2, "正宗重庆万州烤鱼"));
+        modelList.add(new ShopModel(R.drawable.shop_3, "暗香盛宴中餐厅"));
+        modelList.add(new ShopModel(R.drawable.shop_4, "伤心酸辣粉"));
+        modelList.add(new ShopModel(R.drawable.shop_5, "浪漫时光韩式自助餐厅"));
+        modelList.add(new ShopModel(R.drawable.shop_6, "舌尖上的烤鱼"));
+        modelList.add(new ShopModel(R.drawable.shop_7, "晓德自助火锅"));
+        modelList.add(new ShopModel(R.drawable.shop_8, "陆老爹猪脚"));
     }
 
     private void initView(View view) {

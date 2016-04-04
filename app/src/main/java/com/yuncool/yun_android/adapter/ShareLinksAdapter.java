@@ -45,6 +45,7 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
         //TODO
 //        holder.iv_shop_pic.setOutlineProvider(new RoundedCornerOutlineProvider());
 //        holder.iv_shop_pic.setClipToOutline(true);
+        holder.iv_shop_pic.setImageResource(modelList.get(position).shopImageResId);
         holder.tv_shop_name.setText(modelList.get(position).shopName);
         holder.tv_area.setText(modelList.get(position).area);
 
