@@ -6,6 +6,7 @@
     tools:context="com.yuncool.yun_android.Activity.ScanActivity">
 
     <fragment
+        android:id="@+id/f_scan"
         android:name="com.yuncool.yun_android.Fragment.ScanFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.adapter.ShareLinksAdapter;
 import com.yuncool.yun_android.model.ShopModel;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,9 @@ public class ShareLinksActivity extends BaseActivity {
 
     private List<ShopModel> modelList = new ArrayList<>();
 
+
+    YunSQLiteHelper yunSQLiteHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,8 @@ public class ShareLinksActivity extends BaseActivity {
     }
 
     private void initData() {
+
+        yunSQLiteHelper = new YunSQLiteHelper(this);
 
         modelList.add(new ShopModel("晓得自主火锅", "江干区", R.drawable.shop1));
         modelList.add(new ShopModel("陆老爹猪脚", "萧山区", R.drawable.shop2));
@@ -66,6 +72,7 @@ public class ShareLinksActivity extends BaseActivity {
         adapter.setOnItemClickListener(new ShareLinksAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
+
                 Intent intent = new Intent(ShareLinksActivity.this, ShopDetailActivity.class);
                 startActivity(intent);
             }

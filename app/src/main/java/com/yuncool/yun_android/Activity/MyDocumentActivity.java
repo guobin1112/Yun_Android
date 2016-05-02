@@ -1,19 +1,27 @@
 package com.yuncool.yun_android.Activity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.model.FileModel;
 import com.yuncool.yun_android.util.Constant;
+import com.yuncool.yun_android.util.FileHelper;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 public class MyDocumentActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final int FILE_SELECT_CODE = 1;
     private Button btn_doc, btn_ppt, btn_xls, btn_pdf, btn_txt, btn_other, btn_category, btn_common_softwafe;
     private TextView tv_download, tv_print;
+    YunSQLiteHelper yunSqliteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,7 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
     }
 
     private void initData() {
+        yunSqliteHelper = new YunSQLiteHelper(this);
 
     }
 
@@ -115,19 +124,100 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.btn_common_software:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyDocumentActivity.this, "正在开发中,敬请期待!", Toast.LENGTH_SHORT).show();
 
                 break;
             case R.id.tv_download:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.LOCAL.getVal());
+                startActivity(intent);
+
 
                 break;
             case R.id.tv_print:
 
-                Toast.makeText(MyDocumentActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MyDocumentActivity.this, PrintActivity.class);
+                startActivity(intent);
 
                 break;
         }
     }
+
+
+    /**
+     * 调用文件选择软件来选择文件
+     **/
+    private void showFileChooser() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        try {
+            startActivityForResult(Intent.createChooser(intent, "请选择一个要上传的文件"),
+                    FILE_SELECT_CODE);
+        } catch (android.content.ActivityNotFoundException ex) {
+            // Potentially direct the user to the Market with a Dialog
+            Toast.makeText(MyDocumentActivity.this, "请安装文件管理器", Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+    /**
+     * 根据返回选择的文件，来进行上传操作
+     **/
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == Activity.RESULT_OK) {
+            // Get the Uri of the selected file
+            Uri uri = data.getData();
+            String url;
+            url = FileHelper.uriToPath(MyDocumentActivity.this, uri);
+
+            FileModel model = new FileModel();
+
+            model.fileName = url.substring(url.lastIndexOf("/") + 1);
+            model.fileType = getFileType(model.fileName);
+
+            showProgressDialog();
+
+
+            if (yunSqliteHelper.upLoadFile(MainApplication.getLoginUserInfo().userId, model) > 0) {
+                Toast.makeText(MyDocumentActivity.this, "文件上传成功，请在“上传文件-待打印”中查看", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(MyDocumentActivity.this, "文件上传失败啦，退出再试试吧", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public int getFileType(String fileName) {
+
+        String typeStr = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+        if (typeStr.equals("doc") || typeStr.equals("docx")) {
+            return FileModel.DOC;
+        }
+
+        if (typeStr.equals("ppt") || typeStr.equals("pptx")) {
+            return FileModel.PPT;
+        }
+
+        if (typeStr.equals("xls") || typeStr.equals("xlsx")) {
+            return FileModel.XLS;
+        }
+
+        if (typeStr.equals("pdf")) {
+            return FileModel.PDF;
+        }
+
+        if (typeStr.equals("txt") || typeStr.equals("docx")) {
+            return FileModel.TXT;
+        }
+
+        return FileModel.OTHER;
+    }
+
 }

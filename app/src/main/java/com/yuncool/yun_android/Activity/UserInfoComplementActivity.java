@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.UserInfoModel;
 import com.yuncool.yun_android.util.YunSQLiteHelper;
@@ -35,6 +36,7 @@ public class UserInfoComplementActivity extends BaseActivity implements View.OnC
         initData();
         initView();
         initEvent();
+
     }
 
     private void initData() {
@@ -70,8 +72,8 @@ public class UserInfoComplementActivity extends BaseActivity implements View.OnC
             }
         });
 
-        if (!userInfoModel.phoneNumber.equals("")) {
-            isFirstUpdate = true;
+        if (userInfoModel.phoneNumber != null && !userInfoModel.phoneNumber.equals("")) {
+
             et_name.setText(userInfoModel.realName);
             et_address.setText(userInfoModel.address);
             et_telephone.setText(userInfoModel.phoneNumber);
@@ -83,6 +85,8 @@ public class UserInfoComplementActivity extends BaseActivity implements View.OnC
                     rg_gender.check(R.id.rb_female);
                     break;
             }
+        } else {
+            isFirstUpdate = true;
         }
 
     }
@@ -121,7 +125,16 @@ public class UserInfoComplementActivity extends BaseActivity implements View.OnC
                     showProgressDialog();
                     if (yunSQLiteHelper.updateUserInfo(userInfoModel.userId, et_name.getText().toString(),
                             mGender, et_telephone.getText().toString(), et_address.getText().toString(), isFirstUpdate) > 0) {
-                        Toast.makeText(UserInfoComplementActivity.this, "完善信息成功，云币+10", Toast.LENGTH_SHORT).show();
+
+                        if (isFirstUpdate) {
+                            Toast.makeText(UserInfoComplementActivity.this, "完善信息成功，云币+10", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(UserInfoComplementActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(userInfoModel.userId));
 
                         Intent intent = new Intent(UserInfoComplementActivity.this, MainActivity.class);
                         startActivity(intent);

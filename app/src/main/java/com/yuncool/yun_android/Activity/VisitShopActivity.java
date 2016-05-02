@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.adapter.VisitShopAdapter;
 import com.yuncool.yun_android.model.ShopModel;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 import com.yuncool.yun_android.view.GridSpaceItemDecoration;
 
 import java.util.ArrayList;
@@ -23,6 +26,8 @@ public class VisitShopActivity extends BaseActivity {
 
     private List<ShopModel> modelList = new ArrayList<>();
 
+    private YunSQLiteHelper yunSQLiteHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,8 @@ public class VisitShopActivity extends BaseActivity {
     }
 
     private void initData() {
+
+        yunSQLiteHelper = new YunSQLiteHelper(this);
 
         modelList.add(new ShopModel("晓得自主火锅", "江干区", R.drawable.shop1));
         modelList.add(new ShopModel("陆老爹猪脚", "萧山区", R.drawable.shop2));
@@ -70,8 +77,22 @@ public class VisitShopActivity extends BaseActivity {
         adapter.setOnItemClickListener(new VisitShopAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(VisitShopActivity.this, ShopDetailActivity.class);
-                startActivity(intent);
+
+                showProgressDialog();
+
+                if (yunSQLiteHelper.addMoney(MainApplication.getLoginUserInfo().userId, 5) > 0) {
+
+                    MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(MainApplication.getLoginUserInfo().userId));
+
+                    Toast.makeText(VisitShopActivity.this, "访问" + modelList.get(position).shopName + "成功，云币+5", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(VisitShopActivity.this, ShopDetailActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(VisitShopActivity.this, "访问店铺出了点小问题，再试试看", Toast.LENGTH_SHORT).show();
+
+                }
+
+
             }
         });
 

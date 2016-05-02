@@ -8,4 +8,13 @@ public class FileModel {
     public String fileName;
     public String filePath;
     public String fileUrl;
+    public int fileType;
+    public int userId;
+
+    public static final int DOC = 1;
+    public static final int PPT = 2;
+    public static final int XLS = 3;
+    public static final int PDF = 4;
+    public static final int TXT = 5;
+    public static final int OTHER = 6;
 }

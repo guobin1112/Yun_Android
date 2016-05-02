@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MenuItem;
-
-import java.util.Random;
 
 /**
  * Created by Black on 2016/1/20.
@@ -43,21 +40,29 @@ public class BaseActivity extends Activity {
     }
 
     public void showProgressDialog() {
-        if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
-            mProgressDialog.setMessage("数据正在加载中，请稍后");
-        }
 
-        mProgressDialog.show();
+//        try {
+//
+//            if (mProgressDialog == null) {
+//                mProgressDialog = new ProgressDialog(this);
+//                mProgressDialog.setMessage("数据正在加载中，请稍后");
+//            }
+//
+//            mProgressDialog.show();
+//
+//            new Handler().postDelayed(new Runnable() {
+//
+//                @Override
+//                public void run() {
+//                    mProgressDialog.dismiss();
+//                }
+//
+//            }, new Random().nextInt(1000));
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                mProgressDialog.dismiss();
-            }
-
-        }, new Random().nextInt(1000));
     }
 
 

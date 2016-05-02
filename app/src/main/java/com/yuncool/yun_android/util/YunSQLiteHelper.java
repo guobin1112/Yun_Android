@@ -6,7 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.yuncool.yun_android.model.FileModel;
 import com.yuncool.yun_android.model.UserInfoModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Black on 2016/5/2.
@@ -30,8 +34,28 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
                     "\"Address\" VARCHAR NOT NULL , " +
                     "\"RealName\" VARCHAR NOT NULL ) ";
 
+    private static final String FILE_UPLOADED_TABLE_CREATE =
+            "CREATE TABLE \"FileUploaded\" (" +
+                    "\"FileId\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , " +
+                    "\"FileName\" VARCHAR  NOT NULL , " +
+                    "\"FileType\" INTEGER  NOT NULL , " +
+                    "\"UserId\" INTEGER  NOT NULL ) ";
+
+    private static final String SHOP_TABLE_CREATE =
+            "CREATE TABLE \"ShopInfo\" (" +
+                    "\"ShopId\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , " +
+                    "\"ShopName\" VARCHAR  NOT NULL , " +
+                    "\"ShopImageResId\" INTEGER  NOT NULL , " +
+                    "\"ShopPartName\" VARCHAR NOT NULL , " +
+                    "\"ShopAddress\" VARCHAR  NOT NULL , " +
+                    "\"ShopPhoneNumber\" VARCHAR  NOT NULL , " +
+                    "\"Discount\" FLOAT  NOT NULL , " +
+                    "\"Area\" VARCHAR NOT NULL , " +
+                    "\"Address\" VARCHAR NOT NULL) ";
+
     private static final String USER_INFO_TABLE_DROP =
             "drop table if exists UserInfo";
+
 
     public long register(UserInfoModel model) {
         ContentValues cv = new ContentValues();
@@ -75,7 +99,8 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
     }
 
 
-    public long updateUserInfo(int userId, String realName, int gender, String phoneNumber, String address, boolean isFirstUpdate) {
+    public long updateUserInfo(int userId, String realName, int gender,
+                               String phoneNumber, String address, boolean isFirstUpdate) {
 
         ContentValues cv = new ContentValues();
         cv.put("PhoneNumber", phoneNumber);
@@ -93,6 +118,18 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
         db.close();
         return affectedRows;
 
+    }
+
+    public long addMoney(int userId, float addMoney) {
+
+        ContentValues cv = new ContentValues();
+        cv.put("Money", queryUserInfo(userId).money + addMoney);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] args = {String.valueOf(userId)};
+        long affectedRows = db.update("UserInfo", cv, "UserId=?", args);
+        db.close();
+        return affectedRows;
     }
 
     public UserInfoModel login(String account, String password) {
@@ -143,10 +180,66 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    public List<FileModel> getFileList(int userId, int fileType) {
+        List<FileModel> modelList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cur = db.query("FileUploaded", null,
+                "UserId == ? and FileType=? ", new String[]{userId + "", fileType + ""}, null, null, null, null);
+        FileModel model = null;
+        while (cur.moveToNext()) {
+            model = new FileModel();
+            model.fileId = cur.getInt(cur.getColumnIndex("FileId"));
+            model.fileName = cur.getString(cur.getColumnIndex("FileName"));
+            model.fileType = cur.getInt(cur.getColumnIndex("FileType"));
+            model.userId = cur.getInt(cur.getColumnIndex("UserId"));
+            modelList.add(model);
+
+            break;
+        }
+        db.close();
+        return modelList;
+    }
+
+    public List<FileModel> getFileList(int userId) {
+        List<FileModel> modelList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cur = db.query("FileUploaded", null,
+                "UserId == ?", new String[]{userId + ""}, null, null, null, null);
+        FileModel model = null;
+        while (cur.moveToNext()) {
+            model = new FileModel();
+            model.fileId = cur.getInt(cur.getColumnIndex("FileId"));
+            model.fileName = cur.getString(cur.getColumnIndex("FileName"));
+            model.fileType = cur.getInt(cur.getColumnIndex("FileType"));
+            model.userId = cur.getInt(cur.getColumnIndex("UserId"));
+            modelList.add(model);
+
+            break;
+        }
+        db.close();
+        return modelList;
+    }
+
+    public long upLoadFile(int userId, FileModel model) {
+        ContentValues cv = new ContentValues();
+        cv.put("FileName", model.fileName);
+        cv.put("FileType", model.fileType);
+        cv.put("UserId", userId);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        long affectedRows = db.insert("FileUploaded", "", cv);
+        db.close();
+        return affectedRows;
+
+    }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(USER_INFO_TABLE_CREATE);//创建用户记录表
+        sqLiteDatabase.execSQL(USER_INFO_TABLE_CREATE);
+        sqLiteDatabase.execSQL(FILE_UPLOADED_TABLE_CREATE);
+        sqLiteDatabase.execSQL(SHOP_TABLE_CREATE);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.yuncool.yun_android.adapter;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.ShopModel;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +55,29 @@ public class ShareLinksAdapter extends RecyclerView.Adapter<ShareLinksAdapter.Vi
 
         holder.btn_share_link.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //TODO
-                Toast.makeText(view.getContext(), "正在开发中", Toast.LENGTH_SHORT).show();
+            public void onClick(final View view) {
+                new AlertDialog.Builder(view.getContext())
+                        .setTitle(R.string.app_name)
+                        .setMessage("确认分享？")
+                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                YunSQLiteHelper yunSQLiteHelper = new YunSQLiteHelper(view.getContext());
+
+                                if (yunSQLiteHelper.addMoney(MainApplication.getLoginUserInfo().userId, 10) > 0) {
+
+                                    MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(MainApplication.getLoginUserInfo().userId));
+
+                                    Toast.makeText(view.getContext(), "分享" + modelList.get(position).shopName + "信息成功，云币+10", Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    Toast.makeText(view.getContext(), "分享店铺出了点小问题，再试试看", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        })
+                        .setNegativeButton("取消", null)
+                        .show();
 
             }
         });

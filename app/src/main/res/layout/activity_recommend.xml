@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
         android:background="@null"
-        android:src="@drawable/wechat_friends" />
+        android:src="@drawable/wechat_friends"
+        android:visibility="gone" />
 
     <ImageButton
         android:id="@+id/ib_weibo_friends"
@@ -31,6 +32,7 @@
         android:layout_below="@+id/ib_weibo_friends"
         android:layout_marginTop="@dimen/view_large_space"
         android:background="@null"
-        android:src="@drawable/wechat_friends" />
+        android:src="@drawable/wechat_friends"
+        android:visibility="gone" />
 
 </RelativeLayout>

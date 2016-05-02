@@ -1,11 +1,15 @@
 package com.yuncool.yun_android.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 public class RecommendActivity extends BaseActivity implements View.OnClickListener {
 
@@ -54,7 +58,29 @@ public class RecommendActivity extends BaseActivity implements View.OnClickListe
 
             case R.id.ib_weibo_friends:
 
-                Toast.makeText(RecommendActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(view.getContext())
+                        .setTitle(R.string.app_name)
+                        .setMessage("确认分享？")
+                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                YunSQLiteHelper yunSQLiteHelper = new YunSQLiteHelper(RecommendActivity.this);
+
+                                if (yunSQLiteHelper.addMoney(MainApplication.getLoginUserInfo().userId, 10) > 0) {
+
+                                    MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(MainApplication.getLoginUserInfo().userId));
+
+                                    Toast.makeText(RecommendActivity.this, "分享成功，云币+10", Toast.LENGTH_SHORT).show();
+
+                                } else {
+                                    Toast.makeText(RecommendActivity.this, "分享出了点小问题，再试试看", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        })
+                        .setNegativeButton("取消", null)
+                        .show();
+
 
                 break;
 

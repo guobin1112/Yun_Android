@@ -1,6 +1,10 @@
 package com.yuncool.yun_android.util;
 
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Environment;
+import android.provider.MediaStore;
 
 import com.yuncool.yun_android.model.FileModel;
 
@@ -64,9 +68,7 @@ public class FileHelper {
 
     }
 
-    private static void search(String rootPath, String keyWord)
-
-    {
+    private static void search(String rootPath, String keyWord) {
 
         try {
 
@@ -119,5 +121,20 @@ public class FileHelper {
 
     }
 
+    public static String uriToPath(Context context, Uri contentUri) {
+        Cursor cursor = null;
+        try {
+            String[] proj = {MediaStore.Images.Media.DATA};
+            cursor = context.getContentResolver().query(contentUri, proj, null, null, null);
+            int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+            String path = cursor.getString(column_index);
 
+            return path;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+    }
 }
