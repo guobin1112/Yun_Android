@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTransaction.commit();
 
                         if (actionBar != null) {
-                            actionBar.setTitle("随手印");
+                            actionBar.setTitle("云初");
                         }
 
                         break;

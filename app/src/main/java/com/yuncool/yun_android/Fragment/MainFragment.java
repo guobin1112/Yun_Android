@@ -9,10 +9,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
+import com.yuncool.yun_android.Activity.FavorableShopActivity;
 import com.yuncool.yun_android.Activity.MicroLibraryActivity;
 import com.yuncool.yun_android.Activity.PrintActivity;
+import com.yuncool.yun_android.Activity.ScanActivity;
 import com.yuncool.yun_android.Activity.SocialActivity;
 import com.yuncool.yun_android.R;
 
@@ -91,12 +92,14 @@ public class MainFragment extends BaseFragment implements View.OnClickListener, 
                 break;
             case R.id.ib_shop:
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), FavorableShopActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.ib_user_center:
 
-                Toast.makeText(getActivity(), "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), ScanActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.ib_social:

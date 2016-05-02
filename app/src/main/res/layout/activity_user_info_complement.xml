@@ -18,7 +18,8 @@
             android:id="@+id/et_name"
             style="@style/InputWithLeftIconWhiteBgGrayFrame"
             android:drawableLeft="@drawable/user_name"
-            android:hint="@string/user_info_input_name_hint" />
+            android:hint="@string/user_info_input_name_hint"
+            android:singleLine="true" />
 
         <RadioGroup
             android:id="@+id/rg_gender"
@@ -54,21 +55,26 @@
             android:layout_marginTop="@dimen/view_normal_space"
             android:drawableLeft="@drawable/birthday"
             android:gravity="left|center_vertical"
-            android:hint="@string/user_info_input_birthday_hint" />
+            android:hint="@string/user_info_input_birthday_hint"
+            android:visibility="gone" />
 
         <EditText
             android:id="@+id/et_telephone"
             style="@style/InputWithLeftIconWhiteBgGrayFrame"
             android:layout_marginTop="@dimen/view_normal_space"
             android:drawableLeft="@drawable/telephone"
-            android:hint="@string/user_info_input_telephone_hint" />
+            android:hint="@string/user_info_input_telephone_hint"
+            android:inputType="number"
+            android:maxLength="11"
+            android:singleLine="true" />
 
         <EditText
             android:id="@+id/et_address"
             style="@style/InputWithLeftIconWhiteBgGrayFrame"
             android:layout_marginTop="@dimen/view_normal_space"
             android:drawableLeft="@drawable/address"
-            android:hint="@string/user_info_input_address_hint" />
+            android:hint="@string/user_info_input_address_hint"
+            android:singleLine="true" />
     </LinearLayout>
 
     <Button

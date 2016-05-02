@@ -2,6 +2,7 @@ package com.yuncool.yun_android.Fragment;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.yuncool.yun_android.Activity.EarnYunMoneyActivity;
 import com.yuncool.yun_android.Activity.RechargeOnlineActivity;
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.model.UserInfoModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +27,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
     private TextView tv_user_name, tv_account, tv_yun_money_number, tv_discount_number,
             tv_get_yun_money, tv_recharge_online;
 
+    UserInfoModel userInfoModel;
 
     public UserCenterFragment() {
         // Required empty public constructor
@@ -56,9 +60,19 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         tv_get_yun_money = (TextView) view.findViewById(R.id.tv_get_yun_money);
         tv_recharge_online = (TextView) view.findViewById(R.id.tv_recharge_online);
 
+        tv_user_name.setText(userInfoModel.userName);
+        tv_account.setText(userInfoModel.phoneNumber);
+        tv_yun_money_number.setText((int) userInfoModel.money + "");
+        tv_discount_number.setText((int) userInfoModel.discount + "");
+
     }
 
     private void initData() {
+
+        SharedPreferences pref = getActivity().getSharedPreferences("UserInfo", getActivity().MODE_PRIVATE);
+        String userInfo = pref.getString("userInfo", "");
+
+        userInfoModel = new Gson().fromJson(userInfo, UserInfoModel.class);
 
 
     }
