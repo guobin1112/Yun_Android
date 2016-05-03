@@ -1,5 +1,7 @@
 package com.yuncool.yun_android.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +12,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,8 @@ public class RechargeOnlineActivity extends BaseActivity {
     private Button btn_recharge;
 
     private List<Integer> list = new ArrayList<>();
+
+    private YunSQLiteHelper yunSQLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,10 @@ public class RechargeOnlineActivity extends BaseActivity {
 
         rb_recharge.setChecked(true);
 
+        rb_10.setChecked(true);
+
+        yunSQLiteHelper = new YunSQLiteHelper(this);
+
     }
 
     private void initEvent() {
@@ -68,7 +78,24 @@ public class RechargeOnlineActivity extends BaseActivity {
         btn_recharge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(RechargeOnlineActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(RechargeOnlineActivity.this)
+                        .setTitle(R.string.app_name)
+                        .setMessage("你确定要为账号" + et_account.getText().toString().trim()
+                                + "充值10云币吗?")
+                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (yunSQLiteHelper.addMoney(MainApplication.getLoginUserInfo().userId, 10) > 0) {
+                                    Toast.makeText(RechargeOnlineActivity.this, "你已成功充值10云币", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                } else {
+                                    Toast.makeText(RechargeOnlineActivity.this, "充值失败啦，退出再试试吧", Toast.LENGTH_SHORT).show();
+                                }
+                                ;
+                            }
+                        })
+                        .setPositiveButton("取消", null)
+                        .show();
             }
         });
     }

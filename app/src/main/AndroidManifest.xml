@@ -84,7 +84,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.FavorableShopActivity" />
-        <activity android:name=".Activity.ScanActivity"></activity>
+        <activity android:name=".Activity.ScanActivity" />
+        <activity android:name=".Activity.UserCenterActivity"></activity>
     </application>
 
 </manifest>

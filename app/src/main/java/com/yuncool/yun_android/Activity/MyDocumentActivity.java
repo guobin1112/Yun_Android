@@ -13,7 +13,6 @@ import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.FileModel;
 import com.yuncool.yun_android.util.Constant;
-import com.yuncool.yun_android.util.FileHelper;
 import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 public class MyDocumentActivity extends BaseActivity implements View.OnClickListener {
@@ -77,49 +76,48 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
             case R.id.btn_doc:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.DOC.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.DOC);
                 startActivity(intent);
 
                 break;
             case R.id.btn_ppt:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.PPT.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.PPT);
                 startActivity(intent);
 
                 break;
             case R.id.btn_xls:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.XLS.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.XLS);
                 startActivity(intent);
 
                 break;
             case R.id.btn_pdf:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.PDF.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.PDF);
                 startActivity(intent);
 
                 break;
             case R.id.btn_txt:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.TXT.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.TXT);
                 startActivity(intent);
 
                 break;
             case R.id.btn_other:
 
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.OTHER.getVal());
+                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, FileModel.OTHER);
                 startActivity(intent);
                 break;
+
             case R.id.btn_category:
 
-                intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
-                intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.LOCAL.getVal());
-                startActivity(intent);
+                showFileChooser();
 
                 break;
             case R.id.btn_common_software:
@@ -132,7 +130,6 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
                 intent = new Intent(MyDocumentActivity.this, FilesActivity.class);
                 intent.putExtra(Constant.IntentArgs.INT_FILE_TYPE, Constant.FileType.LOCAL.getVal());
                 startActivity(intent);
-
 
                 break;
             case R.id.tv_print:
@@ -171,12 +168,10 @@ public class MyDocumentActivity extends BaseActivity implements View.OnClickList
         if (resultCode == Activity.RESULT_OK) {
             // Get the Uri of the selected file
             Uri uri = data.getData();
-            String url;
-            url = FileHelper.uriToPath(MyDocumentActivity.this, uri);
 
             FileModel model = new FileModel();
 
-            model.fileName = url.substring(url.lastIndexOf("/") + 1);
+            model.fileName = uri.toString().substring(uri.toString().lastIndexOf("/") + 1);
             model.fileType = getFileType(model.fileName);
 
             showProgressDialog();

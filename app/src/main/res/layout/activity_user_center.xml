@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.FilesActivity">
+    tools:context="com.yuncool.yun_android.Activity.UserCenterActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/lv_file"
+    <fragment
+        android:id="@+id/f_center"
+        android:name="com.yuncool.yun_android.Fragment.UserCenterFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
