@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
+import com.yuncool.yun_android.model.ShopModel;
 
 public class ShopDetailActivity extends BaseActivity implements View.OnClickListener {
 
@@ -21,6 +22,8 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
     private Button btn_action;
     private RatingBar rb_elevation;
     private ImageButton ib_shop_phone;
+
+    private ShopModel shopModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
     }
 
     private void initData() {
-
+        shopModel = getIntent().getParcelableExtra("shopInfo");
     }
 
     private void initView() {
@@ -53,6 +56,17 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
         btn_action = (Button) findViewById(R.id.btn_action);
         rb_elevation = (RatingBar) findViewById(R.id.rb_elevation);
         ib_shop_phone = (ImageButton) findViewById(R.id.ib_shop_phone);
+
+        if (shopModel != null) {
+
+            iv_shop_pic.setImageResource(shopModel.shopImageResId);
+            tv_shop_name.setText(shopModel.shopName);
+            tv_shop_branch_name.setText(shopModel.shopPartName);
+            tv_shop_branch_address.setText(shopModel.shopAddress);
+
+        } else {
+            Toast.makeText(ShopDetailActivity.this, "数据无法响应", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.yuncool.yun_android.model.FileModel;
+import com.yuncool.yun_android.model.ShopModel;
 import com.yuncool.yun_android.model.UserInfoModel;
 
 import java.util.ArrayList;
@@ -50,8 +51,7 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
                     "\"ShopAddress\" VARCHAR  NOT NULL , " +
                     "\"ShopPhoneNumber\" VARCHAR  NOT NULL , " +
                     "\"Discount\" FLOAT  NOT NULL , " +
-                    "\"Area\" VARCHAR NOT NULL , " +
-                    "\"Address\" VARCHAR NOT NULL) ";
+                    "\"Area\" VARCHAR NOT NULL ) ";
 
     private static final String USER_INFO_TABLE_DROP =
             "drop table if exists UserInfo";
@@ -234,6 +234,33 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
         return affectedRows;
 
     }
+
+    public List<ShopModel> getShopList() {
+        List<ShopModel> modelList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cur = db.query("ShopInfo", null,
+                null, null, null, null, null);
+        ShopModel model = null;
+        while (cur.moveToNext()) {
+            model = new ShopModel();
+            model.shopId = cur.getInt(cur.getColumnIndex("ShopId"));
+            model.shopName = cur.getString(cur.getColumnIndex("ShopName"));
+            model.shopImageResId = cur.getInt(cur.getColumnIndex("ShopImageResId"));
+            model.shopPartName = cur.getString(cur.getColumnIndex("ShopPartName"));
+            model.shopAddress = cur.getString(cur.getColumnIndex("ShopAddress"));
+            model.shopPhoneNumber = cur.getString(cur.getColumnIndex("ShopPhoneNumber"));
+            model.discount = cur.getFloat(cur.getColumnIndex("Discount"));
+            model.area = cur.getString(cur.getColumnIndex("Area"));
+
+            modelList.add(model);
+
+            break;
+        }
+        db.close();
+        return modelList;
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

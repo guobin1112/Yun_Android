@@ -1,15 +1,20 @@
 package com.yuncool.yun_android.Activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.yuncool.yun_android.R;
 
-public class FavorableShopActivity extends BaseActivity {
+public class Activity1Activity extends BaseActivity {
+
+    Button btnApply;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorable_shop);
+        setContentView(R.layout.activity_activity1);
+
+        btnApply = (Button) findViewById(R.id.btn_apply);
+
     }
 }

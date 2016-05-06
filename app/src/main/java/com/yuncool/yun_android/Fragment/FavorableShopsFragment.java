@@ -61,22 +61,30 @@ public class FavorableShopsFragment extends BaseFragment implements View.OnTouch
     }
 
     private void initData() {
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_2, "正宗重庆万州烤鱼"));
-        modelList.add(new ShopModel(R.drawable.shop_3, "暗香盛宴中餐厅"));
-        modelList.add(new ShopModel(R.drawable.shop_4, "伤心酸辣粉"));
-        modelList.add(new ShopModel(R.drawable.shop_5, "浪漫时光韩式自助餐厅"));
-        modelList.add(new ShopModel(R.drawable.shop_6, "舌尖上的烤鱼"));
-        modelList.add(new ShopModel(R.drawable.shop_7, "晓德自助火锅"));
-        modelList.add(new ShopModel(R.drawable.shop_8, "陆老爹猪脚"));
-        modelList.add(new ShopModel(R.drawable.shop_1, "华莱士"));
-        modelList.add(new ShopModel(R.drawable.shop_2, "正宗重庆万州烤鱼"));
-        modelList.add(new ShopModel(R.drawable.shop_3, "暗香盛宴中餐厅"));
-        modelList.add(new ShopModel(R.drawable.shop_4, "伤心酸辣粉"));
-        modelList.add(new ShopModel(R.drawable.shop_5, "浪漫时光韩式自助餐厅"));
-        modelList.add(new ShopModel(R.drawable.shop_6, "舌尖上的烤鱼"));
-        modelList.add(new ShopModel(R.drawable.shop_7, "晓德自助火锅"));
-        modelList.add(new ShopModel(R.drawable.shop_8, "陆老爹猪脚"));
+
+//        public ShopModel(int shopId, int shopImageResId, String shopName, String area,
+//                String shopPartName, String shopAddress, String shopPhoneNumber, float discount) {
+//
+
+        modelList.add(new ShopModel(0, R.drawable.shop_1, "华莱士", "西湖区", "小和山店", "留和路300号", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_2, "正宗重庆万州烤鱼", "西湖区", "古荡店", "文三西路古翠路口", "13512345678", 10f));
+        ;
+        modelList.add(new ShopModel(0, R.drawable.shop_3, "暗香盛宴中餐厅", "江干区", "笕桥店", "机场路250号创意达园内", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_4, "伤心酸辣粉", "余杭区", "临平店", "世纪大道1009号", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_5, "浪漫时光韩式自助餐厅", "西湖区", "骆家庄店", "骆家庄南公交车站", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_6, "舌尖上的烤鱼", "西湖区", "留下店", "留下街道和家园内", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_7, "晓德自助火锅", "萧山区", "萧山店", "", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_8, "陆老爹猪脚", "拱墅区", "萍水西街店", "萍水西街竞舟北路口", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_1, "华莱士", "西湖区", "小和山店", "留和路300号", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_2, "正宗重庆万州烤鱼", "西湖区", "古荡店", "文三西路古翠路口", "13512345678", 10f));
+        ;
+        modelList.add(new ShopModel(0, R.drawable.shop_3, "暗香盛宴中餐厅", "江干区", "笕桥店", "机场路250号创意达园内", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_4, "伤心酸辣粉", "余杭区", "临平店", "世纪大道1009号", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_5, "浪漫时光韩式自助餐厅", "西湖区", "骆家庄店", "骆家庄南公交车站", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_6, "舌尖上的烤鱼", "西湖区", "留下店", "留下街道和家园内", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_7, "晓德自助火锅", "萧山区", "萧山店", "", "13512345678", 10f));
+        modelList.add(new ShopModel(0, R.drawable.shop_8, "陆老爹猪脚", "拱墅区", "萍水西街店", "萍水西街竞舟北路口", "13512345678", 10f));
+
     }
 
     private void initView(View view) {
@@ -104,6 +112,7 @@ public class FavorableShopsFragment extends BaseFragment implements View.OnTouch
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(getActivity(), ShopDetailActivity.class);
+                intent.putExtra("shopInfo", modelList.get(position));
                 startActivity(intent);
             }
         });

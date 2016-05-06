@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.yuncool.yun_android.Activity.Activity2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="一、活动背景"
+            android:textSize="20dp" />
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="        面对当今社会的激烈竞争，大学生就业难度不断加大，考研、考公和出国留学成为越来越多大学生的选择。虽然我院考研、考公及出国的氛围也是越来越浓，但是许多同学对于考研、考公和出国还是充满了困惑，对考研、考公和出国的具体事项还是模棱两可，不知如何做好这些事情的准备工作；就此情况，许多正在考研、考公和出国准备中的同学很希望能与刚从考研、考公成功和出国归来的学长们有一次交流的机会，以便更多的了解这些事情。所以为了让大二大三学生对考研、考公和出国有更充分的认识，让大四学生知道这些事情的具体细节和注意事项，以及明确本专业的就业方向和发展前景，在此情况下，学院学生会学习部策划组织一场考研、考公和出国经验交流会，以帮助同学更好地了解和准备考研、考公和出国。" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="二、活动目的"
+            android:textSize="20dp" />
+
+        <TextView
+            style="@style/DefaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="1．为准备考研、考公及事业单位和出国的同学解决准备过程中遇到的各种问题；
+2．促进同学们的学习热情和考研、考公和出国激情；
+3．帮助低年级同学了解考研、考公及事业单位和出国，及早进入考研、考公及事业单位备考状态和做好出国的工作，同时增强高年级同学的信心和决心；
+4．使同学们更全面认识考研、考公及事业单位、出国和就业情况，提供成功的考研、考公及事业单位和出国的就业经验，让他们能够准备的更充分、表现更出色，并解决他们可能或已经遇到的一些疑惑等问题。
+" />
+
+        <Button
+            android:id="@+id/btn_apply"
+            style="@style/DefaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="我 要 报 名"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yuncool.yun_android.Activity.Activity1Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_apply"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_activity_1" />
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_apply"
+        style="@style/DefaultTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorTextHint"
+        android:text="报 名 已 截 至"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

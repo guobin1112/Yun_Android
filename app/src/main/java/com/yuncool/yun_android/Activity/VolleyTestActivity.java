@@ -1,6 +1,5 @@
 package com.yuncool.yun_android.Activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ import com.yuncool.yun_android.util.Base64Helper;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VolleyTestActivity extends Activity {
+public class VolleyTestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

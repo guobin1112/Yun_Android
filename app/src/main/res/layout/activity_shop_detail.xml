@@ -28,7 +28,8 @@
             android:id="@+id/iv_shop_pic"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/colorTextHint" />
+            android:background="@color/colorTextHint"
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="match_parent"
