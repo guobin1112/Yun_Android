@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.yuncool.yun_android.Activity.ShopDetailActivity;
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.adapter.ShopAdapter;
 import com.yuncool.yun_android.model.ShopModel;
@@ -34,6 +36,7 @@ public class FavorableShopsFragment extends BaseFragment implements View.OnTouch
     private RecyclerView rv_shops;
     private ArrayAdapter<CharSequence> spAapter;
     private ShopAdapter rvAdapter;
+    private TextView tvDiscount;
 
     GridLayoutManager layoutManager;
 
@@ -105,6 +108,10 @@ public class FavorableShopsFragment extends BaseFragment implements View.OnTouch
         spAapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
 
         sp_location.setAdapter(spAapter);
+
+        tvDiscount = (TextView) view.findViewById(R.id.tv_discount);
+
+        tvDiscount.setText((int) MainApplication.getLoginUserInfo().discount + "");
     }
 
     private void initEvent() {

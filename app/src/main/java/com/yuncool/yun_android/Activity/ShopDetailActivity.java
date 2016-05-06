@@ -10,8 +10,10 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yuncool.yun_android.MainApplication;
 import com.yuncool.yun_android.R;
 import com.yuncool.yun_android.model.ShopModel;
+import com.yuncool.yun_android.util.YunSQLiteHelper;
 
 public class ShopDetailActivity extends BaseActivity implements View.OnClickListener {
 
@@ -24,6 +26,7 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
     private ImageButton ib_shop_phone;
 
     private ShopModel shopModel;
+    private YunSQLiteHelper yunSQLiteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
 
     private void initData() {
         shopModel = getIntent().getParcelableExtra("shopInfo");
+        yunSQLiteHelper = new YunSQLiteHelper(this);
     }
 
     private void initView() {
@@ -82,12 +86,22 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
 
             case R.id.btn_action:
 
-                Toast.makeText(ShopDetailActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ShopDetailActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                if (yunSQLiteHelper.addDiscount(MainApplication.getLoginUserInfo().userId, 10) > 0) {
+
+                    MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(MainApplication.getLoginUserInfo().userId));
+
+                    Toast.makeText(view.getContext(), "分享" + shopModel.shopName + "信息成功，获得了10云点券", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(view.getContext(), "分享店铺出了点小问题，再试试看", Toast.LENGTH_SHORT).show();
+
+                }
 
                 break;
             case R.id.ib_shop_phone:
 
-                Toast.makeText(ShopDetailActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ShopDetailActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
 
                 break;
 

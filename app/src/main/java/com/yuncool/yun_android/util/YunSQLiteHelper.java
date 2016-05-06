@@ -132,6 +132,18 @@ public class YunSQLiteHelper extends SQLiteOpenHelper {
         return affectedRows;
     }
 
+    public long addDiscount(int userId, float addDiscount) {
+
+        ContentValues cv = new ContentValues();
+        cv.put("Discount", queryUserInfo(userId).discount + addDiscount);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String[] args = {String.valueOf(userId)};
+        long affectedRows = db.update("UserInfo", cv, "UserId=?", args);
+        db.close();
+        return affectedRows;
+    }
+
     public UserInfoModel login(String account, String password) {
 
         SQLiteDatabase db = this.getReadableDatabase();
