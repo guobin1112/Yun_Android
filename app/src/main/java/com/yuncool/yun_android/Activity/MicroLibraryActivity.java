@@ -42,8 +42,6 @@ public class MicroLibraryActivity extends BaseActivity {
 
         list.add("考研类");
         list.add("外语类");
-        list.add("实验类");
-        list.add("生活类");
         list.add("数学类");
         list.add("考证类");
     }
@@ -75,6 +73,7 @@ public class MicroLibraryActivity extends BaseActivity {
             @Override
             public void OnItemClick(int position) {
                 Intent intent = new Intent(MicroLibraryActivity.this, MicroLibListActivity.class);
+                intent.putExtra("documentType", position);
                 startActivity(intent);
             }
         });

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yuncool.yun_android.R;
-import com.yuncool.yun_android.model.MicroLibListItemModel;
+import com.yuncool.yun_android.model.DocumentModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,16 @@ import java.util.List;
  */
 public class MicroLibListAdapter extends RecyclerView.Adapter<MicroLibListAdapter.ViewHolder> {
 
-    List<MicroLibListItemModel> modelList = new ArrayList<>();
+    List<DocumentModel> modelList = new ArrayList<>();
 
-    public MicroLibListAdapter(List<MicroLibListItemModel> modelList) {
+    private OnItemClickListener listener;
+
+    public MicroLibListAdapter(List<DocumentModel> modelList) {
         this.modelList = modelList;
+    }
+
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -35,11 +41,19 @@ public class MicroLibListAdapter extends RecyclerView.Adapter<MicroLibListAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        holder.tv_date.setText(modelList.get(position).date);
-        holder.tv_month.setText(modelList.get(position).month);
-        holder.tv_title.setText(modelList.get(position).title);
+        holder.tv_date.setText(modelList.get(position).publicDate);
+        holder.tv_month.setText(modelList.get(position).publicMonth);
+        holder.tv_title.setText(modelList.get(position).documentTitle);
+        if (listener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(position);
+                }
+            });
+        }
 
     }
 
@@ -59,5 +73,11 @@ public class MicroLibListAdapter extends RecyclerView.Adapter<MicroLibListAdapte
             this.tv_month = (TextView) itemView.findViewById(R.id.tv_month);
             this.tv_title = (TextView) itemView.findViewById(R.id.tv_title);
         }
+    }
+
+    public interface OnItemClickListener {
+
+        void onItemClick(int position);
+
     }
 }

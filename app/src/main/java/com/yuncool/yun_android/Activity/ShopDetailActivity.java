@@ -87,11 +87,11 @@ public class ShopDetailActivity extends BaseActivity implements View.OnClickList
             case R.id.btn_action:
 
 //                Toast.makeText(ShopDetailActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
-                if (yunSQLiteHelper.addDiscount(MainApplication.getLoginUserInfo().userId, 10) > 0) {
+                if (yunSQLiteHelper.addMoney(MainApplication.getLoginUserInfo().userId, 10) > 0) {
 
                     MainApplication.setLoginUserInfo(yunSQLiteHelper.queryUserInfo(MainApplication.getLoginUserInfo().userId));
 
-                    Toast.makeText(view.getContext(), "分享" + shopModel.shopName + "信息成功，获得了10云点券", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(view.getContext(), "分享" + shopModel.shopName + "信息成功，获得了10云币", Toast.LENGTH_SHORT).show();
 
                 } else {
                     Toast.makeText(view.getContext(), "分享店铺出了点小问题，再试试看", Toast.LENGTH_SHORT).show();
