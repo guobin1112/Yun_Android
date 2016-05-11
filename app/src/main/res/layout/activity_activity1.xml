@@ -28,8 +28,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorTextHint"
-        android:text="报 名 已 截 至"
+        android:background="@color/colorPrimary"
+        android:text="马 上 报 名"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

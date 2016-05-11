@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.yuncool.yun_android.R;
 
@@ -74,7 +73,8 @@ public class EarnYunMoneyActivity extends BaseActivity implements View.OnClickLi
                 break;
             case R.id.tv_scan:
 
-                Toast.makeText(EarnYunMoneyActivity.this, "正在开发中", Toast.LENGTH_SHORT).show();
+                intent = new Intent(EarnYunMoneyActivity.this, ScanGetMoneyActivity.class);
+                startActivity(intent);
 
                 break;
             case R.id.tv_sign_in:
