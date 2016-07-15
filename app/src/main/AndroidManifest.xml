@@ -88,7 +88,8 @@
         <activity android:name=".Activity.UserCenterActivity" />
         <activity android:name=".Activity.Activity1Activity" />
         <activity android:name=".Activity.Activity2Activity" />
-        <activity android:name=".Activity.ScanGetMoneyActivity"></activity>
+        <activity android:name=".Activity.ScanGetMoneyActivity" />
+        <activity android:name=".Activity.TestActivity"></activity>
     </application>
 
 </manifest>
