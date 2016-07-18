@@ -16,6 +16,7 @@ import com.yuncool.yun_android.Fragment.UserCenterFragment;
 
 public class MainActivity extends BaseActivity {
 
+    //test
     private RadioGroup rg_main;
     private RadioButton rb_main, rb_scan, rb_shop_cart, rb_user_center;
     private FrameLayout fl_fragment;
